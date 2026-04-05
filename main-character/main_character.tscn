@@ -192,7 +192,8 @@ shape = SubResource("RectangleShape2D_quprj")
 sprite_frames = SubResource("SpriteFrames_0o3dl")
 animation = &"walk_side"
 autoplay = "idle"
-frame_progress = 0.61033094
+frame = 1
+frame_progress = 0.6052498
 
 [node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("idle", "walk", "sprint", "starting_state")]
 script = ExtResource("2_7bc8o")

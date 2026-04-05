@@ -10,16 +10,16 @@ func enter() -> void:
 
 func process_frame(delta: float) -> State:
 	parent.animations.play(animation_name)
-	if parent.input_direction:
+	if parent.input_direction.y == -1:
 		animation_name = 'walk_up'
 		parent.animations.flip_h = false
-	if Input.is_action_just_pressed("move_down"):
+	elif parent.input_direction.y == 1:
 		animation_name = 'walk_down'
 		parent.animations.flip_h = false
-	if Input.is_action_pressed("move_left"):
+	if parent.input_direction.x == -1:
 		animation_name = 'walk_side'
 		parent.animations.flip_h = true
-	if Input.is_action_pressed('move_right'):
+	elif parent.input_direction.x == 1:
 		animation_name = 'walk_side'
 		parent.animations.flip_h = false
 	return null

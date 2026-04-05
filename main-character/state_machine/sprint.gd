@@ -5,16 +5,17 @@ func enter() -> void:
 
 func process_frame(_delta: float) -> State:
 	parent.animations.play(animation_name)
-	if Input.is_action_just_pressed("move_down"):
+	# sort out the animations for sprinting
+	if parent.input_direction.y == 1:
 		animation_name = 'sprint_down'
 		parent.animations.flip_h = false
-	if Input.is_action_pressed("move_left"):
+	elif parent.input_direction.y == -1:
+		animation_name = 'sprint_up'
+		parent.animations.flip_h = false
+	if parent.input_direction.x == -1:
 		animation_name = 'sprint_side'
 		parent.animations.flip_h = true
-	if Input.is_action_pressed('move_right'):
+	if parent.input_direction.x == 1:
 		animation_name = 'sprint_side'
-		parent.animations.flip_h = false
-	if Input.is_action_pressed("move_up"):
-		animation_name = 'sprint_up'
 		parent.animations.flip_h = false
 	return null

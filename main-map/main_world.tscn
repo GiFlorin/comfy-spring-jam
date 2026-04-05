@@ -1,21 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbfrs7vb1kws5"]
+[gd_scene load_steps=7 format=3 uid="uid://cbfrs7vb1kws5"]
 
 [ext_resource type="PackedScene" uid="uid://dra62ti2oqht7" path="res://main-character/gui.tscn" id="1_dy430"]
 [ext_resource type="PackedScene" uid="uid://h21pmll42jb1" path="res://main-character/main_character.tscn" id="1_mp4in"]
+[ext_resource type="PackedScene" uid="uid://51b2nlx32v76" path="res://main-map/autoload.tscn" id="1_rigfh"]
 [ext_resource type="Texture2D" uid="uid://chnvteini6ykx" path="res://icon.svg" id="2_kbs4g"]
+[ext_resource type="PackedScene" uid="uid://cxtsgs4f8haah" path="res://main-map/egg_item.tscn" id="3_62ohy"]
+
+[sub_resource type="GDScript" id="GDScript_rigfh"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	@warning_ignore(\"narrowing_conversion\")
+	Autoload.destination_x = position.x
+	@warning_ignore(\"narrowing_conversion\")
+	Autoload.destination_y = position.y
+"
 
 [node name="main_world" type="Node2D"]
+
+[node name="autoload" parent="." instance=ExtResource("1_rigfh")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(38.744625, 18.063732)
+color = Color(0.20209509, 0.39231154, 0.10378695, 1)
 
 [node name="GUI" parent="." instance=ExtResource("1_dy430")]
 
 [node name="main_character" parent="." instance=ExtResource("1_mp4in")]
 position = Vector2(533, 317)
 
+[node name="egg_item" parent="main_character" instance=ExtResource("3_62ohy")]
+position = Vector2(0, -42)
+
 [node name="Camera" type="Camera2D" parent="main_character"]
 position = Vector2(38, 8)
 position_smoothing_enabled = true
 
 [node name="Icon" type="Sprite2D" parent="."]
+light_mask = 2
 position = Vector2(853, 381.99997)
 scale = Vector2(1.4453126, 3.5546875)
 texture = ExtResource("2_kbs4g")
+
+[node name="placeholder_dest" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(1377, 127)
+texture = ExtResource("2_kbs4g")
+script = SubResource("GDScript_rigfh")

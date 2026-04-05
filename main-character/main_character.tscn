@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://h21pmll42jb1"]
+
+[ext_resource type="Script" uid="uid://cnu6wtqmfxaxu" path="res://main-character/main_character.gd" id="1_0o3dl"]
+[ext_resource type="Script" uid="uid://dkr8vkpcbrpne" path="res://main-character/state_machine/state_machine.gd" id="2_7bc8o"]
+[ext_resource type="Texture2D" uid="uid://chnvteini6ykx" path="res://icon.svg" id="2_ubipk"]
+[ext_resource type="Script" uid="uid://d2f7ln4hffiwc" path="res://main-character/state_machine/idle.gd" id="3_7bc8o"]
+[ext_resource type="Script" uid="uid://j1tqw74yds63" path="res://main-character/state_machine/walk.gd" id="5_knjbu"]
+[ext_resource type="Script" uid="uid://bmvwti2nfie2b" path="res://main-character/state_machine/sprint.gd" id="8_tidmm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_quprj"]
+size = Vector2(20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knjbu"]
+atlas = ExtResource("2_ubipk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afw1k"]
+atlas = ExtResource("2_ubipk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l6f0"]
+atlas = ExtResource("2_ubipk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0o3dl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knjbu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afw1k")
+}],
+"loop": true,
+"name": &"sprint",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l6f0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="main_character" type="CharacterBody2D"]
+script = ExtResource("1_0o3dl")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_quprj")
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0o3dl")
+animation = &"sprint"
+autoplay = "idle"
+
+[node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("idle", "walk", "sprint", "starting_state")]
+script = ExtResource("2_7bc8o")
+idle = NodePath("idle")
+walk = NodePath("walk")
+sprint = NodePath("sprint")
+starting_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("walk_side")]
+script = ExtResource("3_7bc8o")
+walk_side = NodePath("../walk")
+animation_name = "idle"
+move_speed = 0.0
+
+[node name="walk" type="Node" parent="state_machine" node_paths=PackedStringArray("idle", "sprint")]
+script = ExtResource("5_knjbu")
+idle = NodePath("../idle")
+sprint = NodePath("../sprint")
+animation_name = "walk"
+
+[node name="sprint" type="Node" parent="state_machine"]
+script = ExtResource("8_tidmm")
+animation_name = "sprint"
+move_speed = 600.0

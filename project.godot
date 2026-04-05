@@ -23,6 +23,7 @@ version_control/autoload_on_startup=true
 [file_customization]
 
 folder_colors={
+"res://UI scenes/": "green",
 "res://addons/": "gray",
 "res://main-character/": "red",
 "res://main-map/": "orange"

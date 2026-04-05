@@ -68,9 +68,8 @@ walk = NodePath("walk")
 sprint = NodePath("sprint")
 starting_state = NodePath("idle")
 
-[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("walk_side")]
+[node name="idle" type="Node" parent="state_machine"]
 script = ExtResource("3_7bc8o")
-walk_side = NodePath("../walk")
 animation_name = "idle"
 move_speed = 0.0
 

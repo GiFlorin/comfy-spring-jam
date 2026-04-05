@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 	text = 'time: ' + str("%.1f" % timer.time_left)
 
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file('res://UI scenes/end_day_scene/end_day_scene.tscn')

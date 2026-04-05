@@ -9,13 +9,13 @@
 [node name="GUI" parent="." instance=ExtResource("1_dy430")]
 
 [node name="main_character" parent="." instance=ExtResource("1_mp4in")]
-position = Vector2(-38, -8)
+position = Vector2(533, 317)
 
 [node name="Camera" type="Camera2D" parent="main_character"]
 position = Vector2(38, 8)
 position_smoothing_enabled = true
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(377.5, 21.49997)
+position = Vector2(853, 381.99997)
 scale = Vector2(1.4453126, 3.5546875)
 texture = ExtResource("2_kbs4g")

@@ -9,7 +9,6 @@ var starting_state: State
 var current_state: State
 var velocity
 
-
 # Initialize the state machine by giving each child state a reference to the
 # parent object it belongs to and enter the default starting_state.
 func init(parent: Player) -> void:
@@ -35,7 +34,7 @@ func process_physics(delta: float) -> void:
 		change_state(new_state)
 
 # selects the state
-func process_input(event: InputEvent) -> void:
+func process_input(_event: InputEvent) -> void:
 	var new_state = null
 	if Input.is_action_pressed('move_down') or Input.is_action_pressed('move_up') or Input.is_action_pressed('move_right') or Input.is_action_pressed('move_left'):
 		if Input.is_action_pressed('sprint'):

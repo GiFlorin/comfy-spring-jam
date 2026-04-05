@@ -1,14 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbfrs7vb1kws5"]
+[gd_scene load_steps=4 format=3 uid="uid://cbfrs7vb1kws5"]
 
+[ext_resource type="PackedScene" uid="uid://dra62ti2oqht7" path="res://main-character/gui.tscn" id="1_dy430"]
 [ext_resource type="PackedScene" uid="uid://h21pmll42jb1" path="res://main-character/main_character.tscn" id="1_mp4in"]
 [ext_resource type="Texture2D" uid="uid://chnvteini6ykx" path="res://icon.svg" id="2_kbs4g"]
 
 [node name="main_world" type="Node2D"]
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="GUI" parent="." instance=ExtResource("1_dy430")]
 
 [node name="main_character" parent="." instance=ExtResource("1_mp4in")]
 position = Vector2(-38, -8)
+
+[node name="Camera" type="Camera2D" parent="main_character"]
+position = Vector2(38, 8)
+position_smoothing_enabled = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(377.5, 21.49997)

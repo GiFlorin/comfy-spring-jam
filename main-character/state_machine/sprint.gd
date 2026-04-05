@@ -1,11 +1,11 @@
 extends State
 
+func enter() -> void:
+	super()
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func process_frame(_delta: float) -> State:
+	if Input.is_action_pressed('move_left'):
+		parent.animations.flip_h = true
+	else:
+		parent.animations.flip_h = false
+	return null

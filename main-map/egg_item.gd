@@ -25,9 +25,6 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed('interaction'):
 		if Globals.destinations_complete == false:
-			if get_distance() < 50:
+			if get_distance() < 55:
 				Globals.score += 1
 				new_destination.emit()
-				print('new destination')
-			else:
-				print('not close enough')

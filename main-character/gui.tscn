@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dra62ti2oqht7"]
+[gd_scene load_steps=4 format=3 uid="uid://dra62ti2oqht7"]
 
 [ext_resource type="Script" uid="uid://cw2lq1ovvw7w" path="res://main-map/label_timer.gd" id="1_apygn"]
+[ext_resource type="Script" uid="uid://dod6j3yg8o7nq" path="res://main-map/gui.gd" id="1_y81sq"]
 [ext_resource type="Script" uid="uid://dmj8stodkxja7" path="res://main-map/label_score.gd" id="2_m6rwj"]
 
-[node name="GUI" type="CanvasLayer"]
+[node name="GUI" type="CanvasLayer" node_paths=PackedStringArray("timer")]
 layer = 2
+script = ExtResource("1_y81sq")
+timer = NodePath("label_timer/Timer")
 
 [node name="label_timer" type="Label" parent="."]
 offset_left = 1015.0

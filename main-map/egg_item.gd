@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var glow: PointLight2D = $sprite/glow
+@onready var deliver_particles: CPUParticles2D = $deliver_particles
 
 
 var max_glow = 2500
@@ -28,4 +29,5 @@ func _input(event: InputEvent) -> void:
 		if Globals.destinations_complete == false:
 			if get_distance() < 55:
 				Globals.score += 1
+				deliver_particles.emitting = true
 				new_destination.emit()

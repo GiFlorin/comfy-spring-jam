@@ -6,6 +6,7 @@ var vel_x = 0
 var vel_y = 0
 
 func enter() -> void:
+	parent.trail_particles.speed_scale = 1
 	super()
 
 func process_frame(delta: float) -> State:

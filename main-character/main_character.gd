@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @onready var animations: AnimatedSprite2D = $Animations
 @onready var state_machine: Node = $state_machine
+@onready var trail_particles: CPUParticles2D = $trail_particles
+
 
 var input_direction: Vector2
 

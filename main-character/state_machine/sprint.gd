@@ -1,6 +1,7 @@
 extends State
 
 func enter() -> void:
+	parent.trail_particles.speed_scale = 1.3
 	super()
 
 func process_frame(_delta: float) -> State:

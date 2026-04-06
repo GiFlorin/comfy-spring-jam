@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://h21pmll42jb1"]
+[gd_scene load_steps=29 format=3 uid="uid://h21pmll42jb1"]
 
 [ext_resource type="Script" uid="uid://cnu6wtqmfxaxu" path="res://main-character/main_character.gd" id="1_0o3dl"]
 [ext_resource type="Texture2D" uid="uid://ct6hpky7e1gin" path="res://main-character/townfolk1_m.png" id="2_0o3dl"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://d2f7ln4hffiwc" path="res://main-character/state_machine/idle.gd" id="3_7bc8o"]
 [ext_resource type="Script" uid="uid://j1tqw74yds63" path="res://main-character/state_machine/walk.gd" id="5_knjbu"]
 [ext_resource type="Script" uid="uid://bmvwti2nfie2b" path="res://main-character/state_machine/sprint.gd" id="8_tidmm"]
+
+[sub_resource type="Gradient" id="Gradient_0o3dl"]
+colors = PackedColorArray(0.75398374, 0.7539839, 0.75398386, 1, 1, 1, 1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_quprj"]
 size = Vector2(20, 24)
@@ -184,6 +187,21 @@ animations = [{
 [node name="main_character" type="CharacterBody2D"]
 script = ExtResource("1_0o3dl")
 
+[node name="trail_particles" type="CPUParticles2D" parent="."]
+position = Vector2(2, 15)
+amount = 7
+lifetime = 0.7
+explosiveness = 0.02
+randomness = 0.04
+lifetime_randomness = 0.07
+emission_shape = 1
+emission_sphere_radius = 4.96
+spread = 50.45
+gravity = Vector2(0, 0)
+angular_velocity_max = 29.69
+color_ramp = SubResource("Gradient_0o3dl")
+hue_variation_max = 0.08
+
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_quprj")
@@ -212,8 +230,9 @@ script = ExtResource("5_knjbu")
 idle = NodePath("../idle")
 sprint = NodePath("../sprint")
 animation_name = "sprint_side"
+move_speed = 300.0
 
 [node name="sprint" type="Node" parent="state_machine"]
 script = ExtResource("8_tidmm")
 animation_name = "sprint_side"
-move_speed = 600.0
+move_speed = 500.0

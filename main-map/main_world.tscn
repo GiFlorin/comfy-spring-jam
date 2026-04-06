@@ -25,8 +25,8 @@ y_sort_enabled = true
 
 [node name="Icon" type="Sprite2D" parent="level"]
 light_mask = 3
-position = Vector2(853.00006, 530)
-scale = Vector2(1.4453126, 3.5546875)
+position = Vector2(853.00006, 553.4426)
+scale = Vector2(1.4453126, 1.6172789)
 texture = ExtResource("2_kbs4g")
 offset = Vector2(0, -51.9)
 
@@ -66,6 +66,7 @@ position = Vector2(0, -42)
 
 [node name="Camera" type="Camera2D" parent="level/main_character"]
 position = Vector2(38, 8)
+zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 
 [connection signal="new_destination" from="level/main_character/egg_item" to="level/delivery_points" method="_on_egg_item_new_destination"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dra62ti2oqht7"]
+[gd_scene load_steps=3 format=3 uid="uid://dra62ti2oqht7"]
 
 [ext_resource type="Script" uid="uid://cw2lq1ovvw7w" path="res://main-map/label_timer.gd" id="1_apygn"]
+[ext_resource type="Script" uid="uid://dmj8stodkxja7" path="res://main-map/label_score.gd" id="2_m6rwj"]
 
 [node name="GUI" type="CanvasLayer"]
 layer = 2
@@ -14,5 +15,14 @@ text = "time: xxx"
 script = ExtResource("1_apygn")
 
 [node name="Timer" type="Timer" parent="label_timer"]
+
+[node name="label_score" type="Label" parent="."]
+offset_left = 75.0
+offset_top = 70.0
+offset_right = 115.0
+offset_bottom = 119.0
+text = "xxxx
+"
+script = ExtResource("2_m6rwj")
 
 [connection signal="timeout" from="label_timer/Timer" to="label_timer" method="_on_timer_timeout"]

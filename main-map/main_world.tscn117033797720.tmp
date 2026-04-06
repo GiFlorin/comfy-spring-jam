@@ -2,12 +2,25 @@
 
 [ext_resource type="PackedScene" uid="uid://dra62ti2oqht7" path="res://main-character/gui.tscn" id="1_dy430"]
 [ext_resource type="PackedScene" uid="uid://h21pmll42jb1" path="res://main-character/main_character.tscn" id="1_mp4in"]
-[ext_resource type="Script" uid="uid://vqtbcg0n6wo5" path="res://main-map/delivery_points.gd" id="1_rigfh"]
+[ext_resource type="PackedScene" uid="uid://51b2nlx32v76" path="res://main-map/delivery_points.tscn" id="1_rigfh"]
 [ext_resource type="Texture2D" uid="uid://chnvteini6ykx" path="res://icon.svg" id="2_kbs4g"]
 [ext_resource type="PackedScene" uid="uid://cxtsgs4f8haah" path="res://main-map/egg_item.tscn" id="3_62ohy"]
-[ext_resource type="Script" uid="uid://bltcx6rqasd4n" path="res://main-map/globals.gd" id="6_b8c4b"]
+
+[sub_resource type="GDScript" id="GDScript_rigfh"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	@warning_ignore(\"narrowing_conversion\")
+	delivery_points.destination_x = position.x
+	@warning_ignore(\"narrowing_conversion\")
+	delivery_points.destination_y = position.y
+"
 
 [node name="main_world" type="Node2D"]
+
+[node name="delivery_points" parent="." instance=ExtResource("1_rigfh")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -443.99997
@@ -16,29 +29,6 @@ offset_right = -403.99997
 offset_bottom = -382.0
 scale = Vector2(62.79716, 45.515865)
 color = Color(0.20209509, 0.39231154, 0.10378695, 1)
-
-[node name="globals" type="Node" parent="."]
-script = ExtResource("6_b8c4b")
-
-[node name="delivery_points" type="Node" parent="."]
-script = ExtResource("1_rigfh")
-
-[node name="placeholder_dest" type="Sprite2D" parent="delivery_points"]
-light_mask = 2
-position = Vector2(1377, 127)
-texture = ExtResource("2_kbs4g")
-
-[node name="ColorRect" type="ColorRect" parent="delivery_points"]
-offset_left = 187.0
-offset_top = 240.0
-offset_right = 227.0
-offset_bottom = 280.0
-
-[node name="ColorRect2" type="ColorRect" parent="delivery_points"]
-offset_left = 569.0
-offset_top = 764.0
-offset_right = 609.0
-offset_bottom = 804.0
 
 [node name="GUI" parent="." instance=ExtResource("1_dy430")]
 
@@ -58,4 +48,10 @@ position = Vector2(853, 381.99997)
 scale = Vector2(1.4453126, 3.5546875)
 texture = ExtResource("2_kbs4g")
 
-[connection signal="new_destination" from="main_character/egg_item" to="delivery_points" method="_on_egg_item_new_destination"]
+[node name="placeholder_dest" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(1377, 127)
+texture = ExtResource("2_kbs4g")
+script = SubResource("GDScript_rigfh")
+
+[node name="destinations" type="Node" parent="."]

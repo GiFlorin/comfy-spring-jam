@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://51b2nlx32v76"]
-
-[ext_resource type="Script" uid="uid://vqtbcg0n6wo5" path="res://main-map/autoload.gd" id="1_rw8q0"]
-
-[node name="autoload" type="Node"]
-script = ExtResource("1_rw8q0")

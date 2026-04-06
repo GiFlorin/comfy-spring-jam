@@ -1,8 +1,9 @@
 extends Area2D
 
-@onready var glow: PointLight2D = $glow
+@onready var glow: PointLight2D = $sprite/glow
 
-var max_glow = 1000
+
+var max_glow = 2500
 signal new_destination
 
 func get_distance() -> float:

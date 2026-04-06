@@ -20,42 +20,52 @@ color = Color(0.20209509, 0.39231154, 0.10378695, 1)
 [node name="globals" type="Node" parent="."]
 script = ExtResource("6_b8c4b")
 
-[node name="delivery_points" type="Node" parent="."]
+[node name="level" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Icon" type="Sprite2D" parent="level"]
+light_mask = 3
+position = Vector2(853.00006, 530)
+scale = Vector2(1.4453126, 3.5546875)
+texture = ExtResource("2_kbs4g")
+offset = Vector2(0, -51.9)
+
+[node name="delivery_points" type="Node2D" parent="level"]
+light_mask = 3
+y_sort_enabled = true
 script = ExtResource("1_rigfh")
 
-[node name="placeholder_dest" type="Sprite2D" parent="delivery_points"]
-light_mask = 2
-position = Vector2(1377, 127)
+[node name="placeholder_dest" type="Sprite2D" parent="level/delivery_points"]
+light_mask = 3
+y_sort_enabled = true
+position = Vector2(1355, 231)
 texture = ExtResource("2_kbs4g")
+offset = Vector2(0, -35.04)
 
-[node name="ColorRect" type="ColorRect" parent="delivery_points"]
+[node name="ColorRect" type="ColorRect" parent="level/delivery_points"]
 offset_left = 187.0
 offset_top = 240.0
 offset_right = 227.0
 offset_bottom = 280.0
 
-[node name="ColorRect2" type="ColorRect" parent="delivery_points"]
+[node name="ColorRect2" type="ColorRect" parent="level/delivery_points"]
 offset_left = 569.0
 offset_top = 764.0
 offset_right = 609.0
 offset_bottom = 804.0
 
-[node name="GUI" parent="." instance=ExtResource("1_dy430")]
+[node name="GUI" parent="level" instance=ExtResource("1_dy430")]
 
-[node name="main_character" parent="." instance=ExtResource("1_mp4in")]
+[node name="main_character" parent="level" instance=ExtResource("1_mp4in")]
 position = Vector2(533, 317)
 
-[node name="egg_item" parent="main_character" instance=ExtResource("3_62ohy")]
+[node name="egg_item" parent="level/main_character" instance=ExtResource("3_62ohy")]
+show_behind_parent = true
+y_sort_enabled = true
 position = Vector2(0, -42)
 
-[node name="Camera" type="Camera2D" parent="main_character"]
+[node name="Camera" type="Camera2D" parent="level/main_character"]
 position = Vector2(38, 8)
 position_smoothing_enabled = true
 
-[node name="Icon" type="Sprite2D" parent="."]
-light_mask = 2
-position = Vector2(853, 381.99997)
-scale = Vector2(1.4453126, 3.5546875)
-texture = ExtResource("2_kbs4g")
-
-[connection signal="new_destination" from="main_character/egg_item" to="delivery_points" method="_on_egg_item_new_destination"]
+[connection signal="new_destination" from="level/main_character/egg_item" to="level/delivery_points" method="_on_egg_item_new_destination"]

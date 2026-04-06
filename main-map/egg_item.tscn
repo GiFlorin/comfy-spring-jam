@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://chnvteini6ykx" path="res://icon.svg" id="1_m35wu"]
 [ext_resource type="Script" uid="uid://b3ol8jw8ocd5b" path="res://main-map/egg_item.gd" id="1_qb3mt"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x08we"]
-radius = 20.22375
-
 [sub_resource type="Gradient" id="Gradient_io4b4"]
 offsets = PackedFloat32Array(0, 0.7, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.3333333, 0.3333333, 0.3333333, 1, 0, 0, 0, 1)
@@ -18,19 +15,24 @@ fill_to = Vector2(0.9166667, 0.16666667)
 metadata/_snap_enabled = true
 metadata/_snap_count = 12
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_x08we"]
+radius = 20.22375
+
 [node name="egg_item" type="Area2D"]
 script = ExtResource("1_qb3mt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_x08we")
-
-[node name="glow" type="PointLight2D" parent="."]
-color = Color(1, 0.3529412, 1, 1)
-energy = 1.3
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_2pd5l")
 
 [node name="sprite" type="Sprite2D" parent="."]
 light_mask = 2
 scale = Vector2(0.26752448, 0.26752448)
 texture = ExtResource("1_m35wu")
+
+[node name="glow" type="PointLight2D" parent="sprite"]
+y_sort_enabled = true
+scale = Vector2(3.7379758, 3.7379758)
+color = Color(1, 0.3529412, 1, 1)
+energy = 1.3
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_2pd5l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x08we")

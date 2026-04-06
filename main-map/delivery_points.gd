@@ -7,7 +7,7 @@ var destination_y: int
 var destinations: Array
 var cur_destination = null
 var used_destinations_index = []
-var deliver_goal = 3
+var deliver_goal = 12
 
 func _ready() -> void:
 	destinations = get_children()

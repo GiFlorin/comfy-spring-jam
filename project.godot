@@ -26,6 +26,7 @@ window/stretch/scale_mode="integer"
 
 [editor]
 
+movie_writer/movie_file="C:/Users/User/OneDrive/Área de Trabalho/projetoss/gravação_jogo.avi"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
@@ -35,7 +36,8 @@ folder_colors={
 "res://UI scenes/": "green",
 "res://addons/": "gray",
 "res://main-character/": "red",
-"res://main-map/": "orange"
+"res://main-map/": "orange",
+"res://npcs/": "purple"
 }
 
 [input]

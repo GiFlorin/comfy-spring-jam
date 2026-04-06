@@ -230,9 +230,9 @@ script = ExtResource("5_knjbu")
 idle = NodePath("../idle")
 sprint = NodePath("../sprint")
 animation_name = "sprint_side"
-move_speed = 300.0
+move_speed = 200.0
 
 [node name="sprint" type="Node" parent="state_machine"]
 script = ExtResource("8_tidmm")
 animation_name = "sprint_side"
-move_speed = 500.0
+move_speed = 300.0

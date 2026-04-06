@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvqmqqk7752n8"]
+
+[ext_resource type="Script" uid="uid://bnnwws6ju1j70" path="res://UI scenes/start_screen/button_start.gd" id="1_utd0u"]
+
+[node name="start_screen" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -104.0
+offset_top = -100.0
+offset_right = 115.0
+offset_bottom = -77.0
+text = "Welcome! click here to start:"
+
+[node name="Button" type="Button" parent="."]
+offset_left = -21.0
+offset_top = 79.0
+offset_right = 25.0
+offset_bottom = 110.0
+text = "Start
+"
+script = ExtResource("1_utd0u")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbfrs7vb1kws5"]
+[gd_scene load_steps=11 format=3 uid="uid://cbfrs7vb1kws5"]
 
 [ext_resource type="PackedScene" uid="uid://dra62ti2oqht7" path="res://main-character/gui.tscn" id="1_dy430"]
 [ext_resource type="PackedScene" uid="uid://h21pmll42jb1" path="res://main-character/main_character.tscn" id="1_mp4in"]
@@ -7,6 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://cxtsgs4f8haah" path="res://main-map/egg_item.tscn" id="3_62ohy"]
 [ext_resource type="Script" uid="uid://bltcx6rqasd4n" path="res://main-map/globals.gd" id="6_b8c4b"]
 [ext_resource type="PackedScene" uid="uid://7n4f07qmkyoi" path="res://npcs/npc_base.tscn" id="7_c55ky"]
+
+[sub_resource type="Gradient" id="Gradient_c55ky"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ax4qg"]
+gradient = SubResource("Gradient_c55ky")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5186916, 0.5233645)
+fill_to = Vector2(0.89719623, 0.20093457)
+
+[sub_resource type="Gradient" id="Gradient_ax4qg"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="main_world" type="Node2D"]
 
@@ -69,6 +84,25 @@ position = Vector2(0, -42)
 position = Vector2(38, 8)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="level/main_character/Camera"]
+z_index = 2
+position = Vector2(669, -344)
+rotation = -0.42954507
+scale = Vector2(-2.5404494, 1.205018)
+amount = 5
+texture = SubResource("GradientTexture2D_ax4qg")
+lifetime = 30.05
+randomness = 0.11
+emission_shape = 3
+emission_rect_extents = Vector2(1, 200)
+direction = Vector2(3.18, 2.915)
+gravity = Vector2(-100, 100)
+angular_velocity_max = 74.23
+orbit_velocity_min = -0.05
+angle_min = 103.9
+angle_max = 282.1
+color_ramp = SubResource("Gradient_ax4qg")
 
 [node name="npc" parent="level" instance=ExtResource("7_c55ky")]
 position = Vector2(675, 285)

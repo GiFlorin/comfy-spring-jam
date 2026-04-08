@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct6hpky7e1gin"
-path="res://.godot/imported/townfolk1_m.png-2d1f669b92fa9776858c842584fe1ef3.ctex"
+uid="uid://cgay6sdej4hql"
+path="res://.godot/imported/OakleyWalk.png-787a0ba13607c99ba4fd54824bcd93c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main-character/townfolk1_m.png"
-dest_files=["res://.godot/imported/townfolk1_m.png-2d1f669b92fa9776858c842584fe1ef3.ctex"]
+source_file="res://main-character/OakleyWalk.png"
+dest_files=["res://.godot/imported/OakleyWalk.png-787a0ba13607c99ba4fd54824bcd93c7.ctex"]
 
 [params]
 

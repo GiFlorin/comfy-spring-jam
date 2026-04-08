@@ -9,9 +9,12 @@ var starting_state: State
 var current_state: State
 var velocity
 
+var player
+
 # Initialize the state machine by giving each child state a reference to the
 # parent object it belongs to and enter the default starting_state.
 func init(parent: Player) -> void:
+	player = parent
 	for child in get_children():
 		child.parent = parent
 	
@@ -50,3 +53,11 @@ func process_frame(delta: float) -> void:
 	var new_state = current_state.process_frame(delta)
 	if new_state:
 		change_state(new_state)
+	if player.input_direction.y == -1:
+		player.facing_direction = 'up'
+	elif player.input_direction.y == 1:
+		player.facing_direction = 'down'
+	if player.input_direction.x == -1:
+		player.facing_direction = 'left'
+	elif player.input_direction.x == 1:
+		player.facing_direction = 'right'

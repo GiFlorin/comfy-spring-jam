@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://cbfrs7vb1kws5"]
 
-[ext_resource type="PackedScene" uid="uid://dra62ti2oqht7" path="res://main-character/gui.tscn" id="1_dy430"]
+[ext_resource type="PackedScene" uid="uid://dra62ti2oqht7" path="res://main-map/gui.tscn" id="1_dy430"]
 [ext_resource type="PackedScene" uid="uid://h21pmll42jb1" path="res://main-character/main_character.tscn" id="1_mp4in"]
 [ext_resource type="Script" uid="uid://vqtbcg0n6wo5" path="res://main-map/delivery_points.gd" id="1_rigfh"]
 [ext_resource type="Texture2D" uid="uid://chnvteini6ykx" path="res://icon.svg" id="2_kbs4g"]
 [ext_resource type="PackedScene" uid="uid://cxtsgs4f8haah" path="res://main-map/egg_item.tscn" id="3_62ohy"]
 [ext_resource type="Script" uid="uid://bltcx6rqasd4n" path="res://main-map/globals.gd" id="6_b8c4b"]
-[ext_resource type="PackedScene" uid="uid://7n4f07qmkyoi" path="res://npcs/npc_base.tscn" id="7_c55ky"]
+[ext_resource type="PackedScene" uid="uid://7n4f07qmkyoi" path="res://npcs/base_npc/npc_base.tscn" id="7_c55ky"]
 
 [sub_resource type="Gradient" id="Gradient_c55ky"]
 interpolation_mode = 2
@@ -78,7 +78,7 @@ position = Vector2(533, 317)
 [node name="egg_item" parent="level/main_character" instance=ExtResource("3_62ohy")]
 show_behind_parent = true
 y_sort_enabled = true
-position = Vector2(0, -42)
+position = Vector2(0, -56)
 
 [node name="Camera" type="Camera2D" parent="level/main_character"]
 position = Vector2(38, 8)

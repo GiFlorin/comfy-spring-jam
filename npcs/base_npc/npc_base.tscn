@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://7n4f07qmkyoi"]
 
-[ext_resource type="Script" uid="uid://d0reoow2lbs05" path="res://npcs/npc_base.gd" id="1_cqejd"]
-[ext_resource type="Texture2D" uid="uid://bmvskve75g35a" path="res://npcs/mage_f.png" id="1_h83up"]
-[ext_resource type="Script" uid="uid://dp0f5angom7t8" path="res://npcs/interaction_area.gd" id="3_ke5bj"]
+[ext_resource type="Script" uid="uid://d0reoow2lbs05" path="res://npcs/base_npc/npc_base.gd" id="1_cqejd"]
+[ext_resource type="Texture2D" uid="uid://bmvskve75g35a" path="res://npcs/base_npc/mage_f.png" id="1_h83up"]
+[ext_resource type="Script" uid="uid://dp0f5angom7t8" path="res://npcs/base_npc/interaction_area.gd" id="3_ke5bj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqejd"]
 atlas = ExtResource("1_h83up")

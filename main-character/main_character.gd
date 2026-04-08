@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 
 var input_direction: Vector2
+var facing_direction: String
 
 func _ready() -> void:
 	# initialize the state machine, passing a reference of the player to the states

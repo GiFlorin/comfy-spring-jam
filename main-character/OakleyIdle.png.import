@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmvskve75g35a"
-path="res://.godot/imported/mage_f.png-6954d9cae748ba2e49a7634b3e2b4cd8.ctex"
+uid="uid://ch32sat0ld37x"
+path="res://.godot/imported/OakleyIdle.png-0736f2a0f942c74369d01af12e7612b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://npcs/mage_f.png"
-dest_files=["res://.godot/imported/mage_f.png-6954d9cae748ba2e49a7634b3e2b4cd8.ctex"]
+source_file="res://main-character/OakleyIdle.png"
+dest_files=["res://.godot/imported/OakleyIdle.png-0736f2a0f942c74369d01af12e7612b7.ctex"]
 
 [params]
 

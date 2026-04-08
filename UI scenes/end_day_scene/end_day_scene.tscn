@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkmwrqpr6m3ev"]
+[gd_scene load_steps=3 format=3 uid="uid://dkmwrqpr6m3ev"]
 
 [ext_resource type="Script" uid="uid://cmao8ensbt1ba" path="res://UI scenes/end_day_scene/restart_button.gd" id="1_u0oo1"]
+[ext_resource type="AudioStream" uid="uid://dlpbw5udbulwc" path="res://UI scenes/end_day_scene/Spring.wav" id="2_qsfto"]
 
 [node name="end_day_scene" type="Node2D"]
 
@@ -20,5 +21,9 @@ offset_right = 33.0
 offset_bottom = 128.0
 text = "Restart"
 script = ExtResource("1_u0oo1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_qsfto")
+autoplay = true
 
 [connection signal="button_down" from="restart_button" to="restart_button" method="_on_button_down"]

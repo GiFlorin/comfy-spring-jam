@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxtsgs4f8haah"]
+[gd_scene load_steps=13 format=3 uid="uid://cxtsgs4f8haah"]
 
 [ext_resource type="Texture2D" uid="uid://chnvteini6ykx" path="res://icon.svg" id="1_m35wu"]
 [ext_resource type="Script" uid="uid://b3ol8jw8ocd5b" path="res://main-map/egg_item.gd" id="1_qb3mt"]
+[ext_resource type="AudioStream" uid="uid://vy3352e01uj3" path="res://main-map/sound/egg_collect.wav" id="3_io4b4"]
+[ext_resource type="AudioStream" uid="uid://ch760oi2pq3c6" path="res://main-map/sound/Every 10 eggs.wav" id="4_2pd5l"]
 
 [sub_resource type="Gradient" id="Gradient_qb3mt"]
 colors = PackedColorArray(1, 1, 0.23529412, 0.7019608, 0, 0, 0, 0)
@@ -82,3 +84,9 @@ texture = SubResource("GradientTexture2D_2pd5l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x08we")
+
+[node name="egg_collect_Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_io4b4")
+
+[node name="10_egg_collect_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2pd5l")

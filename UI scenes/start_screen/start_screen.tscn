@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvqmqqk7752n8"]
+[gd_scene load_steps=3 format=3 uid="uid://dvqmqqk7752n8"]
 
 [ext_resource type="Script" uid="uid://bnnwws6ju1j70" path="res://UI scenes/start_screen/button_start.gd" id="1_utd0u"]
+[ext_resource type="AudioStream" uid="uid://bxtokjej4o7sh" path="res://UI scenes/start_screen/Rain for Us.wav" id="2_kn45s"]
 
 [node name="start_screen" type="Node2D"]
 
@@ -21,5 +22,9 @@ offset_bottom = 110.0
 text = "Start
 "
 script = ExtResource("1_utd0u")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_kn45s")
+autoplay = true
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

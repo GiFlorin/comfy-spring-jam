@@ -2,6 +2,8 @@ extends Area2D
 
 @onready var glow: PointLight2D = $sprite/glow
 @onready var deliver_particles: CPUParticles2D = $deliver_particles
+@onready var egg_collect_audio: AudioStreamPlayer2D = $egg_collect_Audio
+@onready var _10_egg_collect_audio: AudioStreamPlayer2D = $"10_egg_collect_audio"
 
 
 var max_glow = 2500
@@ -30,4 +32,8 @@ func _input(event: InputEvent) -> void:
 			if get_distance() < 55:
 				Globals.score += 1
 				deliver_particles.emitting = true
+				if Globals.score % 10 == 0:
+					_10_egg_collect_audio.play()
+				else:
+					egg_collect_audio.play()
 				new_destination.emit()

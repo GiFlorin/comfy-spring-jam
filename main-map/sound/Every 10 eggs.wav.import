@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ch760oi2pq3c6"
+path="res://.godot/imported/Every 10 eggs.wav-1827d291001dc48afd9e00c404289782.sample"
+
+[deps]
+
+source_file="res://main-map/sound/Every 10 eggs.wav"
+dest_files=["res://.godot/imported/Every 10 eggs.wav-1827d291001dc48afd9e00c404289782.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

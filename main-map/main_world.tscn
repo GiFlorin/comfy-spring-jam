@@ -31,7 +31,7 @@ offset_top = -422.0
 offset_right = -403.99997
 offset_bottom = -382.0
 scale = Vector2(62.79716, 45.515865)
-color = Color(0.20209509, 0.39231154, 0.10378695, 1)
+color = Color(0.2441507, 0.41911027, 0.26038608, 1)
 
 [node name="globals" type="Node" parent="."]
 script = ExtResource("6_b8c4b")

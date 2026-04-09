@@ -13,7 +13,7 @@
 colors = PackedColorArray(0.75398374, 0.7539839, 0.75398386, 1, 1, 1, 1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_quprj"]
-size = Vector2(35, 66)
+size = Vector2(23, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_afw1k"]
 atlas = ExtResource("2_1ewkh")
@@ -517,7 +517,7 @@ color_ramp = SubResource("Gradient_0o3dl")
 hue_variation_max = 0.08
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1)
+position = Vector2(0.5, 22.5)
 shape = SubResource("RectangleShape2D_quprj")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
@@ -544,9 +544,9 @@ script = ExtResource("5_knjbu")
 idle = NodePath("../idle")
 sprint = NodePath("../sprint")
 animation_name = "walk_down"
-move_speed = 200.0
+move_speed = 250.0
 
 [node name="sprint" type="Node" parent="state_machine"]
 script = ExtResource("8_tidmm")
 animation_name = "sprint_left"
-move_speed = 300.0
+move_speed = 350.0

@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var gui: CanvasLayer = $"../GUI"
+@onready var gui: CanvasLayer = $"../../GUI"
+
 
 var destination_x: int
 var destination_y: int

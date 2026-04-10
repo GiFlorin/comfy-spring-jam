@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed('interaction'):
 		if Globals.destinations_complete == false:
-			if get_distance() < 55:
+			if get_distance() < 90:
 				Globals.score += 1
 				deliver_particles.emitting = true
 				if Globals.score % 10 == 0:

@@ -502,6 +502,7 @@ animations = [{
 script = ExtResource("1_0o3dl")
 
 [node name="trail_particles" type="CPUParticles2D" parent="."]
+z_index = 1
 position = Vector2(1, 32)
 amount = 7
 lifetime = 0.7

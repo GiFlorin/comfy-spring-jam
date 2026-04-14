@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://51b2nlx32v76"]
 
-[ext_resource type="Script" uid="uid://vqtbcg0n6wo5" path="res://main-map/delivery_points.gd" id="1_rw8q0"]
+[ext_resource type="Script" uid="uid://vqtbcg0n6wo5" path="res://main-map/egg_delivery/delivery_points.gd" id="1_rw8q0"]
 
 [node name="delivery_points" type="Node"]
 script = ExtResource("1_rw8q0")

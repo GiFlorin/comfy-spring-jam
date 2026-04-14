@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://byq68yuttsiaa"]
+
+[ext_resource type="Script" uid="uid://cb8ha6bccyjpt" path="res://main-map/looping_map/looping_barriers.gd" id="1_53ho2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ry4uq"]
+size = Vector2(2687, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gcep"]
+size = Vector2(16, 1793)
+
+[node name="looping_barriers" type="Node2D"]
+script = ExtResource("1_53ho2")
+
+[node name="top" type="Area2D" parent="."]
+position = Vector2(608, -505)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_ry4uq")
+
+[node name="right" type="Area2D" parent="."]
+position = Vector2(1945, 381)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_8gcep")
+
+[node name="bottom" type="Area2D" parent="."]
+position = Vector2(608, 1264)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottom"]
+position = Vector2(-0.5, 8)
+shape = SubResource("RectangleShape2D_ry4uq")
+
+[node name="left" type="Area2D" parent="."]
+position = Vector2(-729, 389)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+position = Vector2(1, -5.5)
+shape = SubResource("RectangleShape2D_8gcep")
+
+[connection signal="body_entered" from="top" to="." method="_on_top_body_entered"]
+[connection signal="body_entered" from="right" to="." method="_on_right_body_entered"]

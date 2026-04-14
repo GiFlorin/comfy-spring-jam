@@ -498,7 +498,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="main_character" type="CharacterBody2D"]
+[node name="main_character" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_0o3dl")
 
 [node name="trail_particles" type="CPUParticles2D" parent="."]

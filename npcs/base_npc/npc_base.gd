@@ -17,11 +17,11 @@ func set_animation():
 		sprites.play("idle")
 		sprites.flip_h = false
 	elif cur_direction == 'right':
-		sprites.flip_h = false
-		sprites.play("walking_side")
+		#sprites.flip_h = false
+		sprites.play("walking_right")
 	elif cur_direction == 'left':
-		sprites.flip_h = true
-		sprites.play("walking_side")
+		#sprites.flip_h = true
+		sprites.play("walking_left")
 	elif cur_direction == 'up':
 		sprites.flip_h = false
 		sprites.play("walking_up")

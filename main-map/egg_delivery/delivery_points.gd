@@ -11,10 +11,6 @@ var used_destinations_index = []
 var deliver_goal = 12
 
 func _ready() -> void:
-<<<<<<< HEAD
-=======
-	used_destinations_index = []
->>>>>>> new
 	destinations = get_children()
 	new_destination()
 

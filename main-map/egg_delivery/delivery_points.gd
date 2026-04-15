@@ -8,7 +8,6 @@ var destination_y: int
 var destinations: Array
 var cur_destination = null
 var used_destinations_index = []
-var deliver_goal = 12
 
 func _ready() -> void:
 	destinations = get_children()
@@ -16,8 +15,12 @@ func _ready() -> void:
 
 func new_destination(): # changes the destination to another random one
 	var n = randi_range(0, len(destinations) - 1)
-	# if all the ponits are complete or if the goal is met
-	if len(destinations) == len(used_destinations_index) or len(used_destinations_index) >= deliver_goal:
+	# if all the destinations are used, restarts
+	if len(destinations) == len(used_destinations_index):
+		used_destinations_index = []
+		
+	# if the goal is met -> normal mode
+	if Globals.game_mode == 'normal' and Globals.score >= Globals.deliver_goal:
 		destination_x = 0
 		destination_y = 0
 		Globals.destinations_complete = true

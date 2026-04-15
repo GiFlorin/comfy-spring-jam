@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7rsq13gwc335"]
+
+[ext_resource type="Script" uid="uid://k8nxfsd21mqm" path="res://shared_assets/button_main_screen.gd" id="1_p2dc2"]
+
+[node name="Button_main_screen" type="Button"]
+offset_left = -71.0
+offset_top = 96.0
+offset_right = 78.0
+offset_bottom = 127.0
+text = "Go to main screen"
+script = ExtResource("1_p2dc2")

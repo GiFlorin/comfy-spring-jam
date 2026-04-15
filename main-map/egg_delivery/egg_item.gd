@@ -48,6 +48,11 @@ func set_egg_sprite():
 	for child in egg_sprite_list:
 		child.visible = false
 	
+	# if you have used all the sprites, it restarts
+	if len(unused_egg_sprite_list) == 0:
+		unused_egg_sprite_list = egg_sprites.get_children()
+	
+	# picks the next sprite at random
 	var sprite = unused_egg_sprite_list.pick_random()
 	sprite.visible = true
 	unused_egg_sprite_list.erase(sprite)

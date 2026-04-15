@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ur3am6pn8b02"]
+
+[ext_resource type="Script" uid="uid://cmao8ensbt1ba" path="res://UI scenes/end_day_scene/restart_button.gd" id="1_pnjvg"]
+
+[node name="restart_button" type="Button"]
+offset_left = -32.0
+offset_top = 97.0
+offset_right = 33.0
+offset_bottom = 128.0
+text = "Restart"
+script = ExtResource("1_pnjvg")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bljeltc0ycrhc"]
+
+[ext_resource type="AudioStream" uid="uid://dlpbw5udbulwc" path="res://shared_assets/Spring.wav" id="1_ot8fe"]
+[ext_resource type="PackedScene" uid="uid://b7rsq13gwc335" path="res://shared_assets/button_main_screen.tscn" id="2_4s6g8"]
+[ext_resource type="PackedScene" uid="uid://ur3am6pn8b02" path="res://shared_assets/restart_button.tscn" id="2_cw645"]
+
+[node name="win_screen" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_ot8fe")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -46.0
+offset_top = -110.0
+offset_right = 43.0
+offset_bottom = -87.0
+text = "You won!!!!!"
+
+[node name="Button_main_screen" parent="." instance=ExtResource("2_4s6g8")]
+
+[node name="restart_button" parent="." instance=ExtResource("2_cw645")]
+offset_left = -31.0
+offset_top = 24.0
+offset_right = 34.0
+offset_bottom = 55.0
+
+[connection signal="button_down" from="Button_main_screen" to="Button_main_screen" method="_on_button_down"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkmwrqpr6m3ev"]
+[gd_scene load_steps=5 format=3 uid="uid://dkmwrqpr6m3ev"]
 
 [ext_resource type="Script" uid="uid://87o2q0tx0gnt" path="res://UI scenes/end_day_scene/end_day_scene.gd" id="1_b771c"]
-[ext_resource type="Script" uid="uid://cmao8ensbt1ba" path="res://UI scenes/end_day_scene/restart_button.gd" id="1_u0oo1"]
-[ext_resource type="AudioStream" uid="uid://dlpbw5udbulwc" path="res://UI scenes/end_day_scene/Spring.wav" id="2_qsfto"]
+[ext_resource type="PackedScene" uid="uid://ur3am6pn8b02" path="res://shared_assets/restart_button.tscn" id="2_b771c"]
+[ext_resource type="AudioStream" uid="uid://dlpbw5udbulwc" path="res://shared_assets/Spring.wav" id="2_qsfto"]
+[ext_resource type="PackedScene" uid="uid://b7rsq13gwc335" path="res://shared_assets/button_main_screen.tscn" id="4_nerjy"]
 
 [node name="end_day_scene" type="Node2D"]
 script = ExtResource("1_b771c")
@@ -16,13 +17,7 @@ offset_right = 103.0
 offset_bottom = -166.0
 text = "{name}'s day has ended!"
 
-[node name="restart_button" type="Button" parent="."]
-offset_left = -32.0
-offset_top = 97.0
-offset_right = 33.0
-offset_bottom = 128.0
-text = "Restart"
-script = ExtResource("1_u0oo1")
+[node name="restart_button" parent="." instance=ExtResource("2_b771c")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_qsfto")
@@ -49,4 +44,8 @@ offset_right = 61.0
 offset_bottom = 7.0
 text = "New high score!!"
 
-[connection signal="button_down" from="restart_button" to="restart_button" method="_on_button_down"]
+[node name="Button_main_screen" parent="." instance=ExtResource("4_nerjy")]
+offset_left = -67.0
+offset_top = 161.0
+offset_right = 82.0
+offset_bottom = 192.0

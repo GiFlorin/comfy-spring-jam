@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvqmqqk7752n8"]
+[gd_scene load_steps=5 format=3 uid="uid://dvqmqqk7752n8"]
 
-[ext_resource type="Script" uid="uid://bnnwws6ju1j70" path="res://UI scenes/start_screen/button_start.gd" id="1_utd0u"]
+[ext_resource type="Script" uid="uid://bnnwws6ju1j70" path="res://UI scenes/start_screen/button_normal.gd" id="1_utd0u"]
 [ext_resource type="AudioStream" uid="uid://bxtokjej4o7sh" path="res://UI scenes/start_screen/Rain for Us.wav" id="2_kn45s"]
+[ext_resource type="Script" uid="uid://yjcjumnn1ru4" path="res://UI scenes/start_screen/button_endless.gd" id="2_l3vv6"]
 [ext_resource type="Script" uid="uid://bys2jticflg53" path="res://UI scenes/start_screen/label_version.gd" id="3_ab4aa"]
 
 [node name="start_screen" type="Node2D"]
@@ -15,14 +16,22 @@ offset_right = 115.0
 offset_bottom = -77.0
 text = "Welcome! click here to start:"
 
-[node name="Button" type="Button" parent="."]
-offset_left = -21.0
-offset_top = 79.0
-offset_right = 25.0
-offset_bottom = 110.0
-text = "Start
-"
+[node name="Button_normal" type="Button" parent="."]
+offset_left = -33.0
+offset_top = 66.0
+offset_right = 34.0
+offset_bottom = 97.0
+text = "Normal"
 script = ExtResource("1_utd0u")
+
+[node name="Button_endless" type="Button" parent="."]
+offset_left = -33.0
+offset_top = 116.0
+offset_right = 34.0
+offset_bottom = 147.0
+text = "Endless
+"
+script = ExtResource("2_l3vv6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_kn45s")
@@ -43,4 +52,5 @@ offset_bottom = 302.0
 text = "v. 0.1"
 script = ExtResource("3_ab4aa")
 
-[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[connection signal="button_down" from="Button_normal" to="Button_normal" method="_on_button_down"]
+[connection signal="button_down" from="Button_endless" to="Button_endless" method="_on_button_down"]

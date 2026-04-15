@@ -17,7 +17,7 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		#top: y=-520.0
 		#bottom: y=1272.0
-		main_character.global_position.x -= 2670
+		main_character.global_position.x -= 2675
 		print("COLLSION WITH RIGHT!")
 		
 		

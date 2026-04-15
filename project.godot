@@ -37,7 +37,8 @@ folder_colors={
 "res://addons/": "gray",
 "res://main-character/": "red",
 "res://main-map/": "orange",
-"res://npcs/": "purple"
+"res://npcs/": "purple",
+"res://shared_assets/": "pink"
 }
 
 [global_group]

@@ -4,7 +4,6 @@ extends Area2D
 @onready var deliver_particles: CPUParticles2D = $deliver_particles
 @onready var egg_collect_audio: AudioStreamPlayer2D = $egg_collect_Audio
 @onready var _10_egg_collect_audio: AudioStreamPlayer2D = $"10_egg_collect_audio"
-@onready var egg_sprite: Sprite2D = $sprite
 
 
 var max_glow = 2500
@@ -37,6 +36,4 @@ func _input(event: InputEvent) -> void:
 					_10_egg_collect_audio.play()
 				else:
 					egg_collect_audio.play()
-					var random_int = randi_range(1, 16)
-					egg_sprite.frame = random_int - 1
 				new_destination.emit()

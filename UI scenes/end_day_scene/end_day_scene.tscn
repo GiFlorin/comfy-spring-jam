@@ -1,17 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkmwrqpr6m3ev"]
+[gd_scene load_steps=4 format=3 uid="uid://dkmwrqpr6m3ev"]
 
+[ext_resource type="Script" uid="uid://87o2q0tx0gnt" path="res://UI scenes/end_day_scene/end_day_scene.gd" id="1_b771c"]
 [ext_resource type="Script" uid="uid://cmao8ensbt1ba" path="res://UI scenes/end_day_scene/restart_button.gd" id="1_u0oo1"]
 [ext_resource type="AudioStream" uid="uid://dlpbw5udbulwc" path="res://UI scenes/end_day_scene/Spring.wav" id="2_qsfto"]
 
 [node name="end_day_scene" type="Node2D"]
+script = ExtResource("1_b771c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = -69.0
-offset_top = -118.0
-offset_right = 80.0
-offset_bottom = -95.0
+offset_left = -73.0
+offset_top = -207.0
+offset_right = 76.0
+offset_bottom = -184.0
 text = "The day has ended!"
 
 [node name="restart_button" type="Button" parent="."]
@@ -25,5 +27,26 @@ script = ExtResource("1_u0oo1")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_qsfto")
 autoplay = true
+
+[node name="Label_score" type="Label" parent="."]
+offset_left = -63.0
+offset_top = -139.0
+offset_right = 72.0
+offset_bottom = -116.0
+text = "Your score was: 0"
+
+[node name="Label_hscore" type="Label" parent="."]
+offset_left = -81.0
+offset_top = -88.0
+offset_right = 94.0
+offset_bottom = -65.0
+text = "Your High Score is: xxx"
+
+[node name="Label_new_high_score" type="Label" parent="."]
+offset_left = -67.0
+offset_top = -16.0
+offset_right = 61.0
+offset_bottom = 7.0
+text = "New high score!!"
 
 [connection signal="button_down" from="restart_button" to="restart_button" method="_on_button_down"]

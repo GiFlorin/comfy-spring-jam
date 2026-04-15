@@ -1,9 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://7n4f07qmkyoi"]
+[gd_scene load_steps=38 format=3 uid="uid://7n4f07qmkyoi"]
 
 [ext_resource type="Script" uid="uid://d0reoow2lbs05" path="res://npcs/base_npc/npc_base.gd" id="1_cqejd"]
 [ext_resource type="Texture2D" uid="uid://dp08i3eqxt1ig" path="res://npcs/base_npc/CatNPCIdle.png" id="2_7fbln"]
 [ext_resource type="Script" uid="uid://dp0f5angom7t8" path="res://npcs/base_npc/interaction_area.gd" id="3_ke5bj"]
 [ext_resource type="Texture2D" uid="uid://crkm4b56jwlov" path="res://npcs/base_npc/CatNPCWalk.png" id="3_v5hxy"]
+[ext_resource type="Texture2D" uid="uid://c6lns1027pat" path="res://npcs/talk_not.png" id="5_v5hxy"]
+[ext_resource type="Script" uid="uid://ddmiaj65dv2lv" path="res://npcs/base_npc/speech.gd" id="6_166ty"]
+[ext_resource type="Texture2D" uid="uid://qksnuj3xqe16" path="res://npcs/TextBubbles.png" id="6_qer0j"]
+[ext_resource type="FontFile" uid="uid://b6mrt7fddvo72" path="res://shared_assets/VCRosdNEUE.ttf" id="7_166ty"]
+[ext_resource type="Script" uid="uid://b5r7d8qg5d058" path="res://npcs/base_npc/speech_text.gd" id="9_0uxff"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2sg34"]
 atlas = ExtResource("2_7fbln")
@@ -156,7 +161,64 @@ animations = [{
 size = Vector2(33, 55)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2n3k"]
-radius = 42.059486
+radius = 67.05222
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6becn"]
+atlas = ExtResource("5_v5hxy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdo2n"]
+atlas = ExtResource("5_v5hxy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye8mf"]
+atlas = ExtResource("5_v5hxy")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgrot"]
+atlas = ExtResource("5_v5hxy")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdkrh"]
+atlas = ExtResource("5_v5hxy")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h62j2"]
+atlas = ExtResource("5_v5hxy")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoyc0"]
+atlas = ExtResource("5_v5hxy")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aygjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6becn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdo2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye8mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgrot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdkrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h62j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoyc0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="npc_base" type="CharacterBody2D"]
 script = ExtResource("1_cqejd")
@@ -179,16 +241,46 @@ target_position = Vector2(-64, 0)
 [node name="interaction_area" type="Area2D" parent="."]
 script = ExtResource("3_ke5bj")
 
-[node name="interaction_icon" type="ColorRect" parent="interaction_area"]
-offset_left = -8.0
-offset_top = -54.0
-offset_right = 9.0
-offset_bottom = -37.0
-
 [node name="CollisionShape" type="CollisionShape2D" parent="interaction_area"]
 position = Vector2(0, -10)
 rotation = -0.3602448
 shape = SubResource("CircleShape2D_r2n3k")
+
+[node name="interaction_icon" type="AnimatedSprite2D" parent="interaction_area"]
+position = Vector2(1, -52)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_aygjr")
+autoplay = "default"
+
+[node name="speech" type="Node2D" parent="."]
+script = ExtResource("6_166ty")
+
+[node name="text_bubbles" type="Node2D" parent="speech"]
+position = Vector2(3, -99)
+
+[node name="bubble_1" type="Sprite2D" parent="speech/text_bubbles"]
+texture = ExtResource("6_qer0j")
+region_enabled = true
+region_rect = Rect2(0, 0, 211.24185, 128)
+
+[node name="bubble_2" type="Sprite2D" parent="speech/text_bubbles"]
+texture = ExtResource("6_qer0j")
+region_enabled = true
+region_rect = Rect2(210, 0.9765091, 209.8714, 124.805176)
+
+[node name="speech_text" type="Label" parent="speech"]
+offset_left = -83.0
+offset_top = -132.0
+offset_right = 92.0
+offset_bottom = -67.0
+theme_override_colors/font_color = Color(0.4627451, 0.65882355, 0.5764706, 1)
+theme_override_fonts/font = ExtResource("7_166ty")
+text = "text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("9_0uxff")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_shape_entered" from="interaction_area" to="interaction_area" method="_on_body_shape_entered"]

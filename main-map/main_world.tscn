@@ -579,32 +579,29 @@ color_ramp = SubResource("Gradient_ax4qg")
 z_index = 1
 position = Vector2(1, -54)
 
-[node name="npcs" type="Node2D" parent="level"]
-z_index = 1
-
-[node name="npc" parent="level/npcs" instance=ExtResource("7_c55ky")]
+[node name="npc" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1
 position = Vector2(675, 285)
 
-[node name="npc_base" parent="level/npcs" instance=ExtResource("7_c55ky")]
+[node name="npc_base" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1
 position = Vector2(-292, -76)
 
-[node name="npc_base2" parent="level/npcs" instance=ExtResource("7_c55ky")]
+[node name="npc_base2" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1
 position = Vector2(1422, 909)
 
-[node name="npc_base3" parent="level/npcs" instance=ExtResource("7_c55ky")]
+[node name="npc_base3" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1
 position = Vector2(553, 894)
 
-[node name="npc_base4" parent="level/npcs" instance=ExtResource("7_c55ky")]
+[node name="npc_base4" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1
 position = Vector2(1446, -104)
 
-[node name="npc_base5" parent="level/npcs" instance=ExtResource("7_c55ky")]
+[node name="npc_base5" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1
-position = Vector2(426, -82)
+position = Vector2(427, -53)
 
 [node name="bottomleftlevelcopy" type="Node2D" parent="."]
 visible = false

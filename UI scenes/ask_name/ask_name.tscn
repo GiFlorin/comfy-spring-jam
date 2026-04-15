@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctncpwj73xo0a"]
+[gd_scene load_steps=4 format=3 uid="uid://ctncpwj73xo0a"]
 
 [ext_resource type="Script" uid="uid://br5rr5vl1lt3u" path="res://UI scenes/ask_name/ask_name.gd" id="1_y0pgm"]
 [ext_resource type="PackedScene" uid="uid://bevla0ryewk0e" path="res://main-map/globals.tscn" id="2_ehchi"]
+[ext_resource type="AudioStream" uid="uid://bxtokjej4o7sh" path="res://UI scenes/start_screen/Rain for Us.wav" id="3_ehchi"]
 
 [node name="ask_name" type="Node2D"]
 script = ExtResource("1_y0pgm")
@@ -30,5 +31,9 @@ offset_top = -27.0
 offset_right = 216.0
 offset_bottom = 8.0
 text = "Confirm"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ehchi")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

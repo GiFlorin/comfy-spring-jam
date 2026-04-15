@@ -1,31 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://dra62ti2oqht7"]
+[gd_scene load_steps=5 format=3 uid="uid://dra62ti2oqht7"]
 
 [ext_resource type="Script" uid="uid://cw2lq1ovvw7w" path="res://main-map/label_timer.gd" id="1_apygn"]
 [ext_resource type="Script" uid="uid://dod6j3yg8o7nq" path="res://main-map/gui.gd" id="1_y81sq"]
 [ext_resource type="Script" uid="uid://dmj8stodkxja7" path="res://main-map/label_score.gd" id="2_m6rwj"]
+[ext_resource type="FontFile" uid="uid://b6mrt7fddvo72" path="res://shared_assets/VCRosdNEUE.ttf" id="2_ydpms"]
 
-[node name="GUI" type="CanvasLayer" node_paths=PackedStringArray("timer")]
+[node name="GUI" type="CanvasLayer" node_paths=PackedStringArray("timer", "label_plus_seconds", "timer_plus_seconds")]
 layer = 2
 script = ExtResource("1_y81sq")
 timer = NodePath("label_timer/Timer")
+label_plus_seconds = NodePath("label_timer/Label_plus_seconds")
+timer_plus_seconds = NodePath("label_timer/Label_plus_seconds/Timer_plus_seconds")
 
 [node name="label_timer" type="Label" parent="."]
-offset_left = 1015.0
-offset_top = 55.0
-offset_right = 1086.0
-offset_bottom = 78.0
-text = "time: xxx"
+offset_left = 944.0
+offset_top = 51.0
+offset_right = 1082.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("2_ydpms")
+theme_override_font_sizes/font_size = 32
+text = "Time: xxx"
 script = ExtResource("1_apygn")
 
 [node name="Timer" type="Timer" parent="label_timer"]
+
+[node name="Label_plus_seconds" type="Label" parent="label_timer"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 35.0
+offset_right = 104.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(1, 0.6876948, 0.99162954, 1)
+theme_override_colors/font_shadow_color = Color(0.3032327, 0.30323288, 0.30323276, 0.5686275)
+theme_override_fonts/font = ExtResource("2_ydpms")
+text = "+5 secs!"
+
+[node name="Timer_plus_seconds" type="Timer" parent="label_timer/Label_plus_seconds"]
+wait_time = 2.0
 
 [node name="label_score" type="Label" parent="."]
 offset_left = 75.0
 offset_top = 70.0
 offset_right = 115.0
 offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("2_ydpms")
+theme_override_font_sizes/font_size = 32
 text = "xxxx
 "
 script = ExtResource("2_m6rwj")
 
 [connection signal="timeout" from="label_timer/Timer" to="label_timer" method="_on_timer_timeout"]
+[connection signal="timeout" from="label_timer/Label_plus_seconds/Timer_plus_seconds" to="." method="_on_timer_plus_seconds_timeout"]

@@ -98,7 +98,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggbt7"]
-size = Vector2(20, 28)
+size = Vector2(33, 55)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2n3k"]
 radius = 42.059486
@@ -114,7 +114,7 @@ frame_progress = 0.5701388
 offset = Vector2(0, -12.19)
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(-3.5, -7.5)
 shape = SubResource("RectangleShape2D_ggbt7")
 
 [node name="ray" type="RayCast2D" parent="."]

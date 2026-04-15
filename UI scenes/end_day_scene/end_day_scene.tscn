@@ -36,10 +36,10 @@ offset_bottom = -116.0
 text = "Your score was: 0"
 
 [node name="Label_hscore" type="Label" parent="."]
-offset_left = -81.0
-offset_top = -88.0
-offset_right = 94.0
-offset_bottom = -65.0
+offset_left = -80.0
+offset_top = -63.0
+offset_right = 95.0
+offset_bottom = -40.0
 text = "Your High Score is: xxx"
 
 [node name="Label_new_high_score" type="Label" parent="."]

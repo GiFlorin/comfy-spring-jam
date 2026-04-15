@@ -1,12 +1,14 @@
 extends Area2D
 
-@onready var glow: PointLight2D = $sprite/glow
+@onready var glow: PointLight2D = $glow
 @onready var deliver_particles: CPUParticles2D = $deliver_particles
 @onready var egg_collect_audio: AudioStreamPlayer2D = $egg_collect_Audio
 @onready var _10_egg_collect_audio: AudioStreamPlayer2D = $"10_egg_collect_audio"
-
+@onready var egg_sprites: Node2D = $egg_sprites
 
 var max_glow = 2500
+var egg_sprite_list: Array
+var unused_egg_sprite_list: Array
 signal new_destination
 
 func get_distance() -> float:
@@ -20,13 +22,15 @@ func get_distance() -> float:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	egg_sprite_list = egg_sprites.get_children()
+	unused_egg_sprite_list = egg_sprites.get_children()
+	set_egg_sprite()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	glow.energy = max_glow/get_distance()
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed('interaction'):
 		if Globals.destinations_complete == false:
 			if get_distance() < 90:
@@ -36,4 +40,14 @@ func _input(event: InputEvent) -> void:
 					_10_egg_collect_audio.play()
 				else:
 					egg_collect_audio.play()
+				set_egg_sprite()
 				new_destination.emit()
+
+func set_egg_sprite():
+	# set all the sprites to invisible
+	for child in egg_sprite_list:
+		child.visible = false
+	
+	var sprite = unused_egg_sprite_list.pick_random()
+	sprite.visible = true
+	unused_egg_sprite_list.erase(sprite)

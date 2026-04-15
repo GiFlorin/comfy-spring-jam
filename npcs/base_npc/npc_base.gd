@@ -15,18 +15,13 @@ var new_position: Vector2
 func set_animation():
 	if is_occupied == false or cur_direction == 'stay':
 		sprites.play("idle")
-		sprites.flip_h = false
 	elif cur_direction == 'right':
-		sprites.flip_h = false
-		sprites.play("walking_side")
+		sprites.play("walking_right")
 	elif cur_direction == 'left':
-		sprites.flip_h = true
-		sprites.play("walking_side")
+		sprites.play("walking_left")
 	elif cur_direction == 'up':
-		sprites.flip_h = false
 		sprites.play("walking_up")
 	elif cur_direction == 'down':
-		sprites.flip_h = false
 		sprites.play("walking_down")
 
 func set_direction():

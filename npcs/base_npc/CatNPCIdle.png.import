@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmvskve75g35a"
-path="res://.godot/imported/mage_f.png-7c0a0ddb4970ae395d75a3990ac995a1.ctex"
+uid="uid://dp08i3eqxt1ig"
+path="res://.godot/imported/CatNPCIdle.png-8f41d2557c8712a03341d007dae98b65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://npcs/base_npc/mage_f.png"
-dest_files=["res://.godot/imported/mage_f.png-7c0a0ddb4970ae395d75a3990ac995a1.ctex"]
+source_file="res://npcs/base_npc/CatNPCIdle.png"
+dest_files=["res://.godot/imported/CatNPCIdle.png-8f41d2557c8712a03341d007dae98b65.ctex"]
 
 [params]
 

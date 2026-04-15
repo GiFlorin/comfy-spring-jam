@@ -1,13 +1,13 @@
-[gd_scene load_steps=32 format=4 uid="uid://cbfrs7vb1kws5"]
+[gd_scene load_steps=37 format=4 uid="uid://cbfrs7vb1kws5"]
 
 [ext_resource type="PackedScene" uid="uid://bevla0ryewk0e" path="res://main-map/globals.tscn" id="1_c55ky"]
 [ext_resource type="PackedScene" uid="uid://dra62ti2oqht7" path="res://main-map/gui.tscn" id="1_dy430"]
 [ext_resource type="PackedScene" uid="uid://h21pmll42jb1" path="res://main-character/main_character.tscn" id="1_mp4in"]
-[ext_resource type="Script" uid="uid://mqno8375om0t" path="res://main-map/egg_delivery/delivery_points.gd" id="1_rigfh"]
+[ext_resource type="Script" uid="uid://vqtbcg0n6wo5" path="res://main-map/egg_delivery/delivery_points.gd" id="1_rigfh"]
 [ext_resource type="Texture2D" uid="uid://ypjjueikws45" path="res://main-map/tile_map/TilesetLayer1.png" id="2_ry4uq"]
 [ext_resource type="Texture2D" uid="uid://ci3345d128p4t" path="res://main-map/tile_map/TilesetLayer2.png" id="3_8gcep"]
 [ext_resource type="PackedScene" uid="uid://cxtsgs4f8haah" path="res://main-map/egg_delivery/egg_item.tscn" id="3_62ohy"]
-[ext_resource type="Script" uid="uid://bfmuika1dr7hs" path="res://main-map/unhidescene.gd" id="4_8gcep"]
+[ext_resource type="Script" uid="uid://dgi4e5tk8x1w0" path="res://main-map/unhidescene.gd" id="4_8gcep"]
 [ext_resource type="Texture2D" uid="uid://c8koqf0wrg7pd" path="res://main-map/tile_map/BenchProp.png" id="4_pii51"]
 [ext_resource type="Texture2D" uid="uid://bqahebxrckhoq" path="res://main-map/tile_map/BushProp.png" id="5_c2e34"]
 [ext_resource type="Texture2D" uid="uid://b1oyjufnfes34" path="res://main-map/tile_map/Flowers.png" id="6_wvltr"]
@@ -15,8 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://7n4f07qmkyoi" path="res://npcs/base_npc/npc_base.tscn" id="7_c55ky"]
 [ext_resource type="Texture2D" uid="uid://b0uv1ljwcybi1" path="res://main-map/tile_map/MailboxProp.png" id="8_2f3qc"]
 [ext_resource type="Texture2D" uid="uid://b7u2ibw8adqeo" path="res://main-map/tile_map/TreeProp.png" id="9_4cc6n"]
-[ext_resource type="PackedScene" uid="uid://byq68yuttsiaa" path="res://main-map/looping_map/looping_barriers.tscn" id="14_8gcep"]
-[ext_resource type="PackedScene" uid="uid://c80goj4sypdc8" path="res://main-map/looping_map/world_copy.tscn" id="16_pii51"]
+[ext_resource type="Script" uid="uid://kminigqajoo3" path="res://main-map/loopingscripts/toplooping.gd" id="14_ry4uq"]
+[ext_resource type="Script" uid="uid://b28gnjtlnmefx" path="res://main-map/loopingscripts/bottomlooping.gd" id="15_ry4uq"]
+[ext_resource type="Script" uid="uid://6pi04yq57fp" path="res://main-map/loopingscripts/leftlooping.gd" id="16_c2e34"]
+[ext_resource type="Script" uid="uid://c5nxpdd4xr3yj" path="res://main-map/loopingscripts/rightlooping.gd" id="17_c2e34"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpcub"]
 texture = ExtResource("2_ry4uq")
@@ -317,6 +319,12 @@ fill_to = Vector2(0.89719623, 0.20093457)
 [sub_resource type="Gradient" id="Gradient_ax4qg"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ry4uq"]
+size = Vector2(2676, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gcep"]
+size = Vector2(4.227173, 1820)
+
 [node name="main_world" type="Node2D"]
 
 [node name="globals" parent="." instance=ExtResource("1_c55ky")]
@@ -335,7 +343,7 @@ tile_set = SubResource("TileSet_em7g1")
 visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, -1792)
+position = Vector2(8, -1784)
 script = ExtResource("4_8gcep")
 
 [node name="TileMapLayer_props" type="TileMapLayer" parent="toplevelcopy"]
@@ -360,7 +368,7 @@ tile_set = SubResource("TileSet_em7g1")
 visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-2688, 0)
+position = Vector2(-2679, 9)
 script = ExtResource("4_8gcep")
 
 [node name="TileMapLayer_props" type="TileMapLayer" parent="leftlevelcopy"]
@@ -385,7 +393,7 @@ tile_set = SubResource("TileSet_em7g1")
 visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-2688, -1791)
+position = Vector2(-2678, -1783)
 script = ExtResource("4_8gcep")
 
 [node name="TileMapLayer_props" type="TileMapLayer" parent="topleftlevelcopy"]
@@ -410,7 +418,7 @@ tile_set = SubResource("TileSet_em7g1")
 visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(2688, -1792)
+position = Vector2(2696, -1783)
 script = ExtResource("4_8gcep")
 
 [node name="TileMapLayer_props" type="TileMapLayer" parent="toprightlevelcopy"]
@@ -537,7 +545,7 @@ position = Vector2(1453, 808)
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_bs4q6")
 
-[node name="main_character" parent="level" instance=ExtResource("1_mp4in")]
+[node name="main_character" parent="level" groups=["player"] instance=ExtResource("1_mp4in")]
 z_index = 1
 position = Vector2(533, 317)
 
@@ -546,7 +554,6 @@ z_index = 1
 position = Vector2(38, 8)
 zoom = Vector2(1.5, 1.5)
 process_callback = 0
-position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="level/main_character/Camera"]
@@ -569,6 +576,7 @@ angle_max = 282.1
 color_ramp = SubResource("Gradient_ax4qg")
 
 [node name="egg_item" parent="level/main_character" instance=ExtResource("3_62ohy")]
+z_index = 1
 position = Vector2(1, -54)
 
 [node name="npc" parent="level" instance=ExtResource("7_c55ky")]
@@ -599,7 +607,7 @@ position = Vector2(426, -82)
 visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-2688, 1792)
+position = Vector2(-2679, 1793)
 script = ExtResource("4_8gcep")
 
 [node name="TileMapLayer_props" type="TileMapLayer" parent="bottomleftlevelcopy"]
@@ -624,7 +632,7 @@ tile_set = SubResource("TileSet_em7g1")
 visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(2688, 1791)
+position = Vector2(2695, 1785)
 script = ExtResource("4_8gcep")
 
 [node name="TileMapLayer_props" type="TileMapLayer" parent="bottomrightlevelcopy"]
@@ -649,7 +657,7 @@ tile_set = SubResource("TileSet_em7g1")
 visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(2688, 0)
+position = Vector2(2697, 9)
 script = ExtResource("4_8gcep")
 
 [node name="TileMapLayer_props" type="TileMapLayer" parent="rightlevelcopy"]
@@ -674,7 +682,7 @@ tile_set = SubResource("TileSet_em7g1")
 visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, 1792)
+position = Vector2(9, 1800)
 script = ExtResource("4_8gcep")
 
 [node name="TileMapLayer_props" type="TileMapLayer" parent="bottomlevelcopy"]
@@ -698,39 +706,37 @@ tile_set = SubResource("TileSet_em7g1")
 [node name="looping_map" type="Node2D" parent="."]
 
 [node name="top" type="Area2D" parent="looping_map"]
-position = Vector2(-6, -24)
+position = Vector2(-5, -42)
 script = ExtResource("14_ry4uq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="looping_map/top"]
-position = Vector2(604, -504)
+position = Vector2(586, -474)
 shape = SubResource("RectangleShape2D_ry4uq")
 
 [node name="bottom" type="Area2D" parent="looping_map"]
-position = Vector2(-10, 1784)
-script = ExtResource("16_pii51")
+position = Vector2(-11, 1787)
+script = ExtResource("15_ry4uq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="looping_map/bottom"]
-position = Vector2(608.5, -504)
+position = Vector2(610, -504)
 shape = SubResource("RectangleShape2D_ry4uq")
 
 [node name="left" type="Area2D" parent="looping_map"]
+position = Vector2(-737, 372)
 script = ExtResource("16_c2e34")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="looping_map/left"]
-position = Vector2(-753, 385)
 shape = SubResource("RectangleShape2D_8gcep")
 
 [node name="right" type="Area2D" parent="looping_map"]
-position = Vector2(2704, -18)
+position = Vector2(2720, -19)
 script = ExtResource("17_c2e34")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="looping_map/right"]
-position = Vector2(-753, 385)
+position = Vector2(-764.5553, 399)
+scale = Vector2(1.6298574, 1)
 shape = SubResource("RectangleShape2D_8gcep")
 
 [node name="GUI" parent="." instance=ExtResource("1_dy430")]
-
-[node name="world_copy" parent="." instance=ExtResource("16_pii51")]
-position = Vector2(2688, 0)
 
 [connection signal="new_destination" from="level/main_character/egg_item" to="level/delivery_points" method="_on_egg_item_new_destination"]

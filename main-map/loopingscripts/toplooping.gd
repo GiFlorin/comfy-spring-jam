@@ -18,7 +18,6 @@ func _on_body_entered(body):
 		#top: y=-520.0
 		#bottom: y=1272.0
 		main_character.global_position.y += 1779
-		print("COLLSION WITH TOP!")
 		
 		
 	pass

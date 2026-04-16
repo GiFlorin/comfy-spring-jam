@@ -81,14 +81,15 @@ texture = SubResource("GradientTexture2D_2pd5l")
 
 [node name="egg_collect_Audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_io4b4")
+volume_db = 5.0
 
 [node name="10_egg_collect_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_2pd5l")
+volume_db = 5.0
 
 [node name="egg_sprites" type="Node2D" parent="."]
 
 [node name="Sprite_1" type="Sprite2D" parent="egg_sprites"]
-visible = false
 light_mask = 2
 z_index = 1
 texture = ExtResource("2_eypqi")

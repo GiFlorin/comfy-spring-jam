@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjb4veqmmd4ok"]
 
-[ext_resource type="AudioStream" uid="uid://dlpbw5udbulwc" path="res://shared_assets/Spring.wav" id="1_mbgsw"]
+[ext_resource type="AudioStream" uid="uid://ji6rq27k3c5r" path="res://shared_assets/Spring.mp3" id="1_oald6"]
 [ext_resource type="PackedScene" uid="uid://ur3am6pn8b02" path="res://shared_assets/restart_button.tscn" id="2_f4kuq"]
 [ext_resource type="PackedScene" uid="uid://b7rsq13gwc335" path="res://shared_assets/button_main_screen.tscn" id="3_oald6"]
 
@@ -16,7 +16,7 @@ offset_bottom = -51.0
 text = "You didn't deliver all the eggs this time..."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("1_mbgsw")
+stream = ExtResource("1_oald6")
 autoplay = true
 
 [node name="restart_button" parent="." instance=ExtResource("2_f4kuq")]

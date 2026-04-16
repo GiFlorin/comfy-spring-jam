@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://87o2q0tx0gnt" path="res://UI scenes/end_day_scene/end_day_scene.gd" id="1_b771c"]
 [ext_resource type="PackedScene" uid="uid://ur3am6pn8b02" path="res://shared_assets/restart_button.tscn" id="2_b771c"]
-[ext_resource type="AudioStream" uid="uid://dlpbw5udbulwc" path="res://shared_assets/Spring.wav" id="2_qsfto"]
+[ext_resource type="AudioStream" uid="uid://ji6rq27k3c5r" path="res://shared_assets/Spring.mp3" id="3_nerjy"]
 [ext_resource type="PackedScene" uid="uid://b7rsq13gwc335" path="res://shared_assets/button_main_screen.tscn" id="4_nerjy"]
 
 [node name="end_day_scene" type="Node2D"]
@@ -20,7 +20,7 @@ text = "{name}'s day has ended!"
 [node name="restart_button" parent="." instance=ExtResource("2_b771c")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_qsfto")
+stream = ExtResource("3_nerjy")
 autoplay = true
 
 [node name="Label_score" type="Label" parent="."]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvqmqqk7752n8"]
 
 [ext_resource type="Script" uid="uid://bnnwws6ju1j70" path="res://UI scenes/start_screen/button_normal.gd" id="1_utd0u"]
-[ext_resource type="AudioStream" uid="uid://bxtokjej4o7sh" path="res://UI scenes/start_screen/Rain for Us.wav" id="2_kn45s"]
 [ext_resource type="Script" uid="uid://yjcjumnn1ru4" path="res://UI scenes/start_screen/button_endless.gd" id="2_l3vv6"]
 [ext_resource type="Script" uid="uid://bys2jticflg53" path="res://UI scenes/start_screen/label_version.gd" id="3_ab4aa"]
+[ext_resource type="AudioStream" uid="uid://dxr2s2bdjdnmg" path="res://UI scenes/start_screen/Rain for Us.mp3" id="3_l3vv6"]
 
 [node name="start_screen" type="Node2D"]
 
@@ -34,7 +34,7 @@ text = "Endless
 script = ExtResource("2_l3vv6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_kn45s")
+stream = ExtResource("3_l3vv6")
 autoplay = true
 
 [node name="Button_credits" type="Button" parent="."]

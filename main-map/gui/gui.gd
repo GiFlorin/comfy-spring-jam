@@ -9,6 +9,9 @@ func _ready() -> void:
 	Globals.score = 0
 	label_plus_seconds.visible = false
 
+func _process(_delta: float) -> void:
+	pass
+
 func add_time(): # adds time to the timer and then keeps going
 	var time_left = timer.time_left
 	timer.stop()

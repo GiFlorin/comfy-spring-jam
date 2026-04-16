@@ -10,6 +10,7 @@ var game_len: int
 var deliver_goal: int
 var add_time: int
 var is_paused = false
+var tutorial_done = false
 
 # normal, endless
 var game_mode: String = 'normal'

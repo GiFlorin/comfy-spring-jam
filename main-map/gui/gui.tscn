@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dra62ti2oqht7"]
+[gd_scene load_steps=8 format=3 uid="uid://dra62ti2oqht7"]
 
 [ext_resource type="Script" uid="uid://cw2lq1ovvw7w" path="res://main-map/gui/label_timer.gd" id="1_apygn"]
 [ext_resource type="Script" uid="uid://dod6j3yg8o7nq" path="res://main-map/gui/gui.gd" id="1_y81sq"]
 [ext_resource type="Script" uid="uid://dmj8stodkxja7" path="res://main-map/gui/label_score.gd" id="2_m6rwj"]
 [ext_resource type="FontFile" uid="uid://b6mrt7fddvo72" path="res://shared_assets/VCRosdNEUE.ttf" id="2_ydpms"]
 [ext_resource type="Script" uid="uid://b7iw8udf8fj8y" path="res://main-map/gui/pause_button.gd" id="5_l7ft5"]
+[ext_resource type="Script" uid="uid://t0f4vpk85gy7" path="res://main-map/gui/tutorial_button.gd" id="6_r3ugg"]
+[ext_resource type="PackedScene" uid="uid://c3q8xlygc4yo2" path="res://UI scenes/tutorial/tutorials.tscn" id="7_tgn4a"]
 
 [node name="GUI" type="CanvasLayer" node_paths=PackedStringArray("timer", "label_plus_seconds", "timer_plus_seconds")]
 layer = 2
@@ -94,6 +96,23 @@ offset_bottom = 368.0
 theme_override_fonts/font = ExtResource("2_ydpms")
 text = "Press 'P' to unpause"
 
+[node name="tutorials" parent="." instance=ExtResource("7_tgn4a")]
+offset_left = 110.0
+offset_top = 96.0
+offset_right = 110.0
+offset_bottom = 96.0
+
+[node name="tutorial_button" type="Button" parent="."]
+offset_left = 122.0
+offset_top = 591.0
+offset_right = 188.0
+offset_bottom = 622.0
+pivot_offset = Vector2(361, 411)
+text = "tutorial
+"
+script = ExtResource("6_r3ugg")
+
 [connection signal="timeout" from="label_timer/Timer" to="label_timer" method="_on_timer_timeout"]
 [connection signal="timeout" from="label_timer/Label_plus_seconds/Timer_plus_seconds" to="." method="_on_timer_plus_seconds_timeout"]
 [connection signal="button_down" from="pause_button" to="pause_button" method="_on_button_down"]
+[connection signal="button_down" from="tutorial_button" to="tutorial_button" method="_on_button_down"]

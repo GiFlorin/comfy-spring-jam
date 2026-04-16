@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://c3q8xlygc4yo2"]
-
-[node name="tutorial_1" type="PopupPanel"]
-oversampling_override = 1.0
-title = "Tutorial"
-visible = true

@@ -1,0 +1,326 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3q8xlygc4yo2"]
+
+[ext_resource type="FontFile" uid="uid://b6mrt7fddvo72" path="res://shared_assets/VCRosdNEUE.ttf" id="1_j2jvs"]
+[ext_resource type="Script" uid="uid://diftk0hila5h3" path="res://UI scenes/tutorial/tutorials.gd" id="1_qaucm"]
+[ext_resource type="Texture2D" uid="uid://ginl85mxbuau" path="res://UI scenes/tutorial/keys.png" id="2_qaucm"]
+[ext_resource type="Texture2D" uid="uid://bht27p5v67p1y" path="res://main-map/egg_delivery/Eggs.png" id="3_q6p45"]
+[ext_resource type="Script" uid="uid://dv8nwiwxbi3cg" path="res://UI scenes/tutorial/pages.gd" id="3_uyd2x"]
+[ext_resource type="Texture2D" uid="uid://bwuvmpbn1ojw7" path="res://main-map/tile_map/HouseProp.png" id="6_uyd2x"]
+
+[node name="tutorials" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_qaucm")
+
+[node name="tutorial_window" type="Panel" parent="."]
+process_mode = 2
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 450.0
+mouse_filter = 1
+
+[node name="overlay" type="Control" parent="tutorial_window"]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 896.0
+offset_bottom = 446.0
+mouse_filter = 1
+
+[node name="progress_counter" type="Label" parent="tutorial_window/overlay"]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 19.0
+offset_right = 867.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+text = "0%
+"
+
+[node name="pages" type="Control" parent="tutorial_window"]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 896.0
+offset_bottom = 446.0
+mouse_filter = 1
+script = ExtResource("3_uyd2x")
+
+[node name="cover_page" type="Control" parent="tutorial_window/pages"]
+visible = false
+anchors_preset = 0
+offset_right = 892.0
+offset_bottom = 442.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="tutorial_window/pages/cover_page"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 132.0
+offset_right = 787.0
+offset_bottom = 263.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+theme_override_font_sizes/font_size = 64
+text = "Eggsprint Express Foundation"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="tutorial_window/pages/cover_page"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 321.0
+offset_right = 590.0
+offset_bottom = 353.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+theme_override_font_sizes/font_size = 32
+text = "Employee Manual"
+
+[node name="page_1" type="Control" parent="tutorial_window/pages"]
+visible = false
+anchors_preset = 0
+offset_right = 892.0
+offset_bottom = 442.0
+mouse_filter = 1
+
+[node name="Label4" type="Label" parent="tutorial_window/pages/page_1"]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 30.0
+offset_right = 506.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+theme_override_font_sizes/font_size = 32
+text = "Movement"
+
+[node name="Label" type="Label" parent="tutorial_window/pages/page_1"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 143.0
+offset_right = 488.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+text = "You move with"
+
+[node name="Label2" type="Label" parent="tutorial_window/pages/page_1"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 175.0
+offset_right = 456.0
+offset_bottom = 198.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+text = "or"
+
+[node name="keys" type="Sprite2D" parent="tutorial_window/pages/page_1"]
+texture_filter = 1
+position = Vector2(297.5, 175)
+scale = Vector2(3, 3)
+texture = ExtResource("2_qaucm")
+region_enabled = true
+region_rect = Rect2(0, 0, 57.547974, 32)
+
+[node name="keys2" type="Sprite2D" parent="tutorial_window/pages/page_1"]
+texture_filter = 1
+position = Vector2(562, 174)
+scale = Vector2(3, 3)
+texture = ExtResource("2_qaucm")
+region_enabled = true
+region_rect = Rect2(61.273514, 0, 57.745667, 32)
+
+[node name="Label3" type="Label" parent="tutorial_window/pages/page_1"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 277.0
+offset_right = 353.0
+offset_bottom = 300.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+text = "sprint with"
+
+[node name="keys3" type="Sprite2D" parent="tutorial_window/pages/page_1/Label3"]
+texture_filter = 1
+position = Vector2(34, 53)
+scale = Vector2(3, 3)
+texture = ExtResource("2_qaucm")
+region_enabled = true
+region_rect = Rect2(265.55658, -2.3171616, 32.908875, 23.595016)
+
+[node name="Label5" type="Label" parent="tutorial_window/pages/page_1"]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 279.0
+offset_right = 631.0
+offset_bottom = 302.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+text = "and pause with "
+
+[node name="keys4" type="Sprite2D" parent="tutorial_window/pages/page_1/Label5"]
+texture_filter = 1
+position = Vector2(58, 53)
+scale = Vector2(3, 3)
+texture = ExtResource("2_qaucm")
+region_enabled = true
+region_rect = Rect2(141.37236, -0.63949585, 25.457764, 19.248558)
+
+[node name="Label6" type="Label" parent="tutorial_window/pages/page_1"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 280.0
+offset_right = 491.0
+offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+text = "interact with"
+
+[node name="keys3" type="Sprite2D" parent="tutorial_window/pages/page_1/Label6"]
+texture_filter = 1
+position = Vector2(34, 53)
+scale = Vector2(3, 3)
+texture = ExtResource("2_qaucm")
+region_enabled = true
+region_rect = Rect2(206.56908, -0.9916382, 24.836853, 21.111328)
+
+[node name="page_2_normal" type="Control" parent="tutorial_window/pages"]
+visible = false
+anchors_preset = 0
+offset_right = 892.0
+offset_bottom = 442.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="tutorial_window/pages/page_2_normal"]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 30.0
+offset_right = 506.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+theme_override_font_sizes/font_size = 32
+text = "Objective"
+
+[node name="Label2" type="RichTextLabel" parent="tutorial_window/pages/page_2_normal"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 147.0
+offset_right = 662.0
+offset_bottom = 222.0
+theme_override_fonts/normal_font = ExtResource("1_j2jvs")
+bbcode_enabled = true
+text = "Your objective is to deliver  [b]all 12 eggs in your town[/b], so all your neighbours have a happy easter day and eat lots of chocolate!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_window/pages/page_2_normal"]
+position = Vector2(447, 322)
+texture = ExtResource("3_q6p45")
+
+[node name="page_2_endless" type="Control" parent="tutorial_window/pages"]
+visible = false
+anchors_preset = 0
+offset_right = 892.0
+offset_bottom = 442.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="tutorial_window/pages/page_2_endless"]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 30.0
+offset_right = 506.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+theme_override_font_sizes/font_size = 32
+text = "Objective"
+
+[node name="Label2" type="RichTextLabel" parent="tutorial_window/pages/page_2_endless"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 147.0
+offset_right = 662.0
+offset_bottom = 222.0
+theme_override_fonts/normal_font = ExtResource("1_j2jvs")
+bbcode_enabled = true
+text = "Your objective is to deliver the [b]maximum number of eggs you can[/b] in your town, so all your neighbours have a happy easter day and eat lots of chocolate!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_window/pages/page_2_endless"]
+position = Vector2(447, 322)
+texture = ExtResource("3_q6p45")
+
+[node name="page_3" type="Control" parent="tutorial_window/pages"]
+anchors_preset = 0
+offset_right = 892.0
+offset_bottom = 442.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="tutorial_window/pages/page_3"]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 30.0
+offset_right = 506.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("1_j2jvs")
+theme_override_font_sizes/font_size = 32
+text = "Delivery"
+
+[node name="Label2" type="RichTextLabel" parent="tutorial_window/pages/page_3"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 121.0
+offset_right = 673.0
+offset_bottom = 196.0
+theme_override_fonts/normal_font = ExtResource("1_j2jvs")
+bbcode_enabled = true
+text = "The closer you get to the egg's destination, the more it glows"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="RichTextLabel" parent="tutorial_window/pages/page_3"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 356.0
+offset_right = 673.0
+offset_bottom = 431.0
+theme_override_fonts/normal_font = ExtResource("1_j2jvs")
+bbcode_enabled = true
+text = "When you arrive to your destination, press E to deliver"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_window/pages/page_3"]
+position = Vector2(255, 264)
+texture = ExtResource("3_q6p45")
+region_enabled = true
+region_rect = Rect2(0, 0, 31.84742, 32)
+
+[node name="Sprite2D2" type="Sprite2D" parent="tutorial_window/pages/page_3"]
+position = Vector2(724, 261)
+texture = ExtResource("6_uyd2x")
+region_enabled = true
+region_rect = Rect2(1.3771744, 1.1655712, 189.38098, 212.35506)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 459.0
+offset_right = 678.0
+offset_bottom = 499.0
+alignment = 1
+
+[node name="previous_button" type="Button" parent="HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "previous"
+
+[node name="close_button" type="Button" parent="HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "close
+"
+
+[node name="next_button" type="Button" parent="HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "next"
+
+[connection signal="button_down" from="HBoxContainer/previous_button" to="." method="_on_previous_button_button_down"]
+[connection signal="button_down" from="HBoxContainer/close_button" to="." method="_on_close_button_button_down"]
+[connection signal="button_down" from="HBoxContainer/next_button" to="." method="_on_next_button_button_down"]

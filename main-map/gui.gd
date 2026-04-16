@@ -9,10 +9,11 @@ func _ready() -> void:
 	Globals.score = 0
 	label_plus_seconds.visible = false
 
-func add_time(time): # adds time to the timer and then keeps going
+func add_time(): # adds time to the timer and then keeps going
 	var time_left = timer.time_left
 	timer.stop()
-	timer.wait_time = time_left + time
+	timer.wait_time = time_left + Globals.add_time
+	label_plus_seconds.text = '+{num} secs!'.format({"num": Globals.add_time})
 	timer.start()
 	# shows label add time
 	label_plus_seconds.visible = true

@@ -11,10 +11,11 @@ var is_talking := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interaction_icon.visible = false
+	self.visible = true
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interaction"):
-		if player_entered == true:
+		if player_entered == true and is_talking == false:
 			speech.speak()
 			is_talking = true
 			interaction_icon.visible = false

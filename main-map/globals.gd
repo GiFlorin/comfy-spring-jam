@@ -8,13 +8,16 @@ var bunny_name = ''
 var destinations_complete = false
 var game_len: int
 var deliver_goal: int
+var add_time: int
 
 # normal, endless
 var game_mode: String = 'normal'
 
-func _enter_tree() -> void:
+func set_data() -> void:
 	if game_mode == 'normal':
 		game_len = 90
 		deliver_goal = 12
+		add_time = 5
 	elif game_mode == 'endless':
-		game_len = 180
+		game_len = 60
+		add_time = 10

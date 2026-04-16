@@ -34,7 +34,7 @@ func new_destination(): # changes the destination to another random one
 		Globals.destination_x = cur_destination.global_position.x
 		Globals.destination_y = cur_destination.global_position.y
 		used_destinations_index.append(n)
-		gui.add_time(5)
+		gui.add_time()
 
 # when the egg has been delivered, it changes the destination
 func _on_egg_item_new_destination() -> void:

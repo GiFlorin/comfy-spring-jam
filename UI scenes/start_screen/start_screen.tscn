@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvqmqqk7752n8"]
+[gd_scene load_steps=4 format=3 uid="uid://dvqmqqk7752n8"]
 
 [ext_resource type="Script" uid="uid://bnnwws6ju1j70" path="res://UI scenes/start_screen/button_normal.gd" id="1_utd0u"]
 [ext_resource type="Script" uid="uid://yjcjumnn1ru4" path="res://UI scenes/start_screen/button_endless.gd" id="2_l3vv6"]
-[ext_resource type="Script" uid="uid://bys2jticflg53" path="res://UI scenes/start_screen/label_version.gd" id="3_ab4aa"]
 [ext_resource type="AudioStream" uid="uid://dxr2s2bdjdnmg" path="res://UI scenes/start_screen/Rain for Us.mp3" id="3_l3vv6"]
 
 [node name="start_screen" type="Node2D"]
@@ -50,7 +49,6 @@ offset_top = 279.0
 offset_right = 527.0
 offset_bottom = 302.0
 text = "v. 0.1"
-script = ExtResource("3_ab4aa")
 
 [connection signal="button_down" from="Button_normal" to="Button_normal" method="_on_button_down"]
 [connection signal="button_down" from="Button_endless" to="Button_endless" method="_on_button_down"]

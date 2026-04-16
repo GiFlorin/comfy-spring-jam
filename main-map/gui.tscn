@@ -33,7 +33,7 @@ offset_bottom = 58.0
 theme_override_colors/font_color = Color(1, 0.6876948, 0.99162954, 1)
 theme_override_colors/font_shadow_color = Color(0.3032327, 0.30323288, 0.30323276, 0.5686275)
 theme_override_fonts/font = ExtResource("2_ydpms")
-text = "+5 secs!"
+text = "+x secs!"
 
 [node name="Timer_plus_seconds" type="Timer" parent="label_timer/Label_plus_seconds"]
 wait_time = 2.0

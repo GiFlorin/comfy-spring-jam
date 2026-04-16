@@ -1,13 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ur3am6pn8b02"]
+[gd_scene load_steps=4 format=3 uid="uid://ur3am6pn8b02"]
 
+[ext_resource type="Texture2D" uid="uid://dwrfevfw1qywd" path="res://UI scenes/SpringButtons.png" id="1_0bfaf"]
 [ext_resource type="Script" uid="uid://cmao8ensbt1ba" path="res://UI scenes/end_day_scene/restart_button.gd" id="1_pnjvg"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhiox"]
+atlas = ExtResource("1_0bfaf")
+region = Rect2(400, 0, 100, 50)
+
 [node name="restart_button" type="Button"]
-offset_left = -32.0
-offset_top = 97.0
-offset_right = 33.0
-offset_bottom = 128.0
-text = "Restart"
+offset_left = -109.0
+offset_top = -58.0
+offset_right = -1.0
+scale = Vector2(2, 2)
+icon = SubResource("AtlasTexture_fhiox")
+flat = true
 script = ExtResource("1_pnjvg")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]

@@ -20,15 +20,13 @@ stream = ExtResource("1_oald6")
 autoplay = true
 
 [node name="restart_button" parent="." instance=ExtResource("2_f4kuq")]
-offset_left = -30.0
-offset_top = 66.0
-offset_right = 35.0
-offset_bottom = 97.0
+offset_left = -108.0
+offset_top = -47.0
+offset_right = 0.0
+offset_bottom = 11.0
 
 [node name="Button_main_screen" parent="." instance=ExtResource("3_oald6")]
-offset_left = -64.0
-offset_top = 117.0
-offset_right = 85.0
-offset_bottom = 148.0
+offset_top = 81.0
+offset_bottom = 139.0
 
 [connection signal="button_down" from="Button_main_screen" to="Button_main_screen" method="_on_button_down"]

@@ -1,10 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bljeltc0ycrhc"]
+[gd_scene load_steps=5 format=3 uid="uid://bljeltc0ycrhc"]
 
 [ext_resource type="AudioStream" uid="uid://ji6rq27k3c5r" path="res://shared_assets/Spring.mp3" id="1_4s6g8"]
+[ext_resource type="Texture2D" uid="uid://idi8y0csn1u3" path="res://UI scenes/win_screen/Egg Delivery Splash Art.png" id="1_qnlp3"]
 [ext_resource type="PackedScene" uid="uid://b7rsq13gwc335" path="res://shared_assets/button_main_screen.tscn" id="2_4s6g8"]
 [ext_resource type="PackedScene" uid="uid://ur3am6pn8b02" path="res://shared_assets/restart_button.tscn" id="2_cw645"]
 
 [node name="win_screen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -617.0
+offset_top = -325.0
+offset_right = 3449.6665
+offset_bottom = 1530.5555
+color = Color(0.8156863, 0.87058824, 1, 1)
+
+[node name="EggDeliverySplashArt" type="Sprite2D" parent="."]
+texture_filter = 4
+position = Vector2(13.000001, -1.0000002)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("1_qnlp3")
 
 [node name="Camera" type="Camera2D" parent="."]
 
@@ -13,18 +27,24 @@ stream = ExtResource("1_4s6g8")
 autoplay = true
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -46.0
 offset_top = -110.0
 offset_right = 43.0
 offset_bottom = -87.0
 text = "You won!!!!!"
 
-[node name="Button_main_screen" parent="." instance=ExtResource("2_4s6g8")]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -169.0
+offset_top = 150.0
+offset_right = 51.0
+offset_bottom = 208.0
+scale = Vector2(1.5, 1.5)
 
-[node name="restart_button" parent="." instance=ExtResource("2_cw645")]
-offset_left = -31.0
-offset_top = 24.0
-offset_right = 34.0
-offset_bottom = 55.0
+[node name="restart_button" parent="HBoxContainer" instance=ExtResource("2_cw645")]
+layout_mode = 2
 
-[connection signal="button_down" from="Button_main_screen" to="Button_main_screen" method="_on_button_down"]
+[node name="Button_main_screen" parent="HBoxContainer" instance=ExtResource("2_4s6g8")]
+layout_mode = 2
+
+[connection signal="button_down" from="HBoxContainer/Button_main_screen" to="HBoxContainer/Button_main_screen" method="_on_button_down"]

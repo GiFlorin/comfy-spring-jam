@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7rsq13gwc335"]
+[gd_scene load_steps=4 format=3 uid="uid://b7rsq13gwc335"]
 
+[ext_resource type="Texture2D" uid="uid://dwrfevfw1qywd" path="res://UI scenes/SpringButtons.png" id="1_k75i1"]
 [ext_resource type="Script" uid="uid://k8nxfsd21mqm" path="res://shared_assets/button_main_screen.gd" id="1_p2dc2"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwltx"]
+atlas = ExtResource("1_k75i1")
+region = Rect2(500, 0, 100, 50)
+
 [node name="Button_main_screen" type="Button"]
-offset_left = -71.0
-offset_top = 96.0
-offset_right = 78.0
-offset_bottom = 127.0
-text = "Go to main screen"
+offset_left = -108.0
+offset_top = -58.0
+scale = Vector2(2, 2)
+icon = SubResource("AtlasTexture_rwltx")
+flat = true
 script = ExtResource("1_p2dc2")

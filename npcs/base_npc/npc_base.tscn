@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dp0f5angom7t8" path="res://npcs/base_npc/interaction_area.gd" id="3_ke5bj"]
 [ext_resource type="Texture2D" uid="uid://crkm4b56jwlov" path="res://npcs/base_npc/CatNPCWalk.png" id="3_v5hxy"]
 [ext_resource type="Texture2D" uid="uid://c6lns1027pat" path="res://npcs/talk_not.png" id="5_v5hxy"]
-[ext_resource type="Script" uid="uid://ddmiaj65dv2lv" path="res://npcs/base_npc/speech.gd" id="6_166ty"]
+[ext_resource type="Script" path="res://npcs/base_npc/speech.gd" id="6_166ty"]
 [ext_resource type="Texture2D" uid="uid://qksnuj3xqe16" path="res://npcs/TextBubbles.png" id="6_qer0j"]
 [ext_resource type="FontFile" uid="uid://b6mrt7fddvo72" path="res://shared_assets/VCRosdNEUE.ttf" id="7_166ty"]
 [ext_resource type="Script" uid="uid://b5r7d8qg5d058" path="res://npcs/base_npc/speech_text.gd" id="9_0uxff"]
@@ -257,7 +257,7 @@ autoplay = "default"
 [node name="speech" type="Node2D" parent="."]
 visible = false
 light_mask = 2
-z_index = 2
+z_index = 10
 script = ExtResource("6_166ty")
 
 [node name="text_bubbles" type="Node2D" parent="speech"]

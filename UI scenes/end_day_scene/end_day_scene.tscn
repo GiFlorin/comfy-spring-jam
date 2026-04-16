@@ -11,10 +11,10 @@ script = ExtResource("1_b771c")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = -86.0
-offset_top = -189.0
-offset_right = 103.0
-offset_bottom = -166.0
+offset_left = -93.0
+offset_top = -215.0
+offset_right = 96.0
+offset_bottom = -192.0
 text = "{name}'s day has ended!"
 
 [node name="restart_button" parent="." instance=ExtResource("2_b771c")]
@@ -24,28 +24,26 @@ stream = ExtResource("3_nerjy")
 autoplay = true
 
 [node name="Label_score" type="Label" parent="."]
-offset_left = -63.0
-offset_top = -139.0
-offset_right = 72.0
-offset_bottom = -116.0
+offset_left = -67.0
+offset_top = -184.0
+offset_right = 68.0
+offset_bottom = -161.0
 text = "Your score was: 0"
 
 [node name="Label_hscore" type="Label" parent="."]
-offset_left = -80.0
-offset_top = -63.0
-offset_right = 95.0
-offset_bottom = -40.0
+offset_left = -85.0
+offset_top = -149.0
+offset_right = 90.0
+offset_bottom = -126.0
 text = "Your High Score is: xxx"
 
 [node name="Label_new_high_score" type="Label" parent="."]
-offset_left = -67.0
-offset_top = -16.0
-offset_right = 61.0
-offset_bottom = 7.0
+offset_left = -63.0
+offset_top = -111.0
+offset_right = 65.0
+offset_bottom = -88.0
 text = "New high score!!"
 
 [node name="Button_main_screen" parent="." instance=ExtResource("4_nerjy")]
-offset_left = -67.0
-offset_top = 161.0
-offset_right = 82.0
-offset_bottom = 192.0
+offset_top = 64.0
+offset_bottom = 122.0

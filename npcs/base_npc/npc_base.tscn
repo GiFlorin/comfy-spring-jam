@@ -253,6 +253,8 @@ sprite_frames = SubResource("SpriteFrames_aygjr")
 autoplay = "default"
 
 [node name="speech" type="Node2D" parent="."]
+light_mask = 2
+z_index = 2
 script = ExtResource("6_166ty")
 
 [node name="text_bubbles" type="Node2D" parent="speech"]

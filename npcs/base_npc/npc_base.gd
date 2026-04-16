@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var ray: RayCast2D = $ray
 @onready var sprites: AnimatedSprite2D = $sprites
 @onready var timer: Timer = $Timer
+@onready var interaction_area: Area2D = $interaction_area
 
 const MAX_DIRECTION_RETRIES = 10
 const SPEED = 75.0
@@ -69,6 +70,7 @@ func set_direction():
 
 func wait():
 	cur_direction = 'stay'
+	sprites.play("idle")
 	timer.wait_time = randi_range(1, 3)
 	velocity.x = 0
 	velocity.y = 0
@@ -86,6 +88,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if global_position.distance_to(new_position) < 3 and cur_direction != 'stay':
+		wait()
+	
+	if interaction_area.is_talking:
 		wait()
 	
 	if is_occupied:

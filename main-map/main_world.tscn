@@ -260,11 +260,11 @@ texture_region_size = Vector2i(32, 32)
 6:0/size_in_atlas = Vector2i(6, 6)
 6:0/0 = 0
 6:0/0/y_sort_origin = 85
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-80, 80, 80, 76, 80, 98, -82, 96)
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-84, 24, 82, 22, 82, 96, -84, 96)
 0:0/size_in_atlas = Vector2i(6, 6)
 0:0/0 = 0
 0:0/0/y_sort_origin = 85
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-80, 80, 80, 76, 80, 98, -82, 96)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-84, 24, 82, 22, 82, 96, -84, 96)
 0:6/size_in_atlas = Vector2i(6, 1)
 0:6/0 = 0
 
@@ -303,7 +303,7 @@ sources/4 = SubResource("TileSetAtlasSource_er2uw")
 sources/5 = SubResource("TileSetAtlasSource_834v7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs4q6"]
-size = Vector2(162, 82)
+size = Vector2(162, 91)
 
 [sub_resource type="Gradient" id="Gradient_c55ky"]
 interpolation_mode = 2
@@ -466,7 +466,7 @@ script = ExtResource("1_rigfh")
 position = Vector2(-236, 165)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/delivery_points/dest_1"]
-position = Vector2(27, -31)
+position = Vector2(27, -26.5)
 shape = SubResource("RectangleShape2D_bs4q6")
 
 [node name="dest_2" type="Area2D" parent="level/delivery_points"]

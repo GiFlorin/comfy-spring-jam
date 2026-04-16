@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var gui: CanvasLayer = $"../../GUI"
 
-
 var destination_x: int
 var destination_y: int
 var destinations: Array
@@ -24,7 +23,7 @@ func new_destination(): # changes the destination to another random one
 		destination_x = 0
 		destination_y = 0
 		Globals.destinations_complete = true
-		get_tree().change_scene_to_file('res://UI scenes/end_day_scene/end_day_scene.tscn')
+		get_tree().change_scene_to_file('res://UI scenes/win_screen/win_screen.tscn')
 	# if the point has already been complete, it runs again
 	elif used_destinations_index.has(n):
 		new_destination()

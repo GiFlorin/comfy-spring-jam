@@ -221,6 +221,7 @@ animations = [{
 }]
 
 [node name="npc_base" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_cqejd")
 
 [node name="sprites" type="AnimatedSprite2D" parent="."]

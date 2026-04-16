@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cbfrs7vb1kws5"]
+[gd_scene load_steps=42 format=4 uid="uid://cbfrs7vb1kws5"]
 
 [ext_resource type="PackedScene" uid="uid://bevla0ryewk0e" path="res://main-map/globals.tscn" id="1_c55ky"]
 [ext_resource type="PackedScene" uid="uid://dra62ti2oqht7" path="res://main-map/gui/gui.tscn" id="1_dy430"]
@@ -320,6 +320,16 @@ fill_to = Vector2(0.89719623, 0.20093457)
 [sub_resource type="Gradient" id="Gradient_ax4qg"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_buq1c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2f3qc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4cc6n"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wpcub"]
+normal = Vector2(0.99942595, -0.03387891)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ry4uq"]
 size = Vector2(2676, 6)
 
@@ -607,6 +617,47 @@ position = Vector2(1446, -104)
 [node name="npc_base5" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1
 position = Vector2(428, -57)
+
+[node name="npc_barriers" type="Node2D" parent="level"]
+
+[node name="bottom" type="StaticBody2D" parent="level/npc_barriers"]
+position = Vector2(-44, 946)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/npc_barriers/bottom"]
+position = Vector2(-4, 24)
+shape = SubResource("WorldBoundaryShape2D_buq1c")
+
+[node name="left" type="StaticBody2D" parent="level/npc_barriers"]
+position = Vector2(-358, 273)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/npc_barriers/left"]
+position = Vector2(-4, 24)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_2f3qc")
+
+[node name="right" type="StaticBody2D" parent="level/npc_barriers"]
+position = Vector2(1285, 273)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/npc_barriers/right"]
+position = Vector2(-4, 24)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_4cc6n")
+
+[node name="top" type="StaticBody2D" parent="level/npc_barriers"]
+position = Vector2(-40, -211)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/npc_barriers/top"]
+position = Vector2(-4, 24)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_wpcub")
 
 [node name="bottomleftlevelcopy" type="Node2D" parent="."]
 visible = false

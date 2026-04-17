@@ -6,6 +6,7 @@ extends Node2D
 @onready var label_new_high_score: Label = $Label_new_high_score
 
 func _ready() -> void:
+	MusicManager.stop_all_music()
 	if Globals.score > Globals.high_score:
 		label_new_high_score.visible = true
 		Globals.high_score = Globals.score

@@ -25,6 +25,7 @@ func update_buttons():
 		next_button.visible = true
 
 func _ready():
+	MusicManager.stop_all_music()
 	update_buttons()
 	
 
@@ -40,3 +41,4 @@ func _on_close_button_button_down() -> void:
 	get_tree().paused = false
 	self.visible = false
 	Globals.tutorial_done = true
+	MusicManager.main_map_music.play()

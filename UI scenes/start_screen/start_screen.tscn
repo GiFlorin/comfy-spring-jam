@@ -1,14 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://dvqmqqk7752n8"]
 
 [ext_resource type="Texture2D" uid="uid://y6xvm83ebt8r" path="res://UI scenes/start_screen/Title Menu_FinalVer (with title).png" id="1_ka8vc"]
+[ext_resource type="Script" uid="uid://efie728c03sj" path="res://UI scenes/start_screen/start_screen.gd" id="1_kk50m"]
 [ext_resource type="Script" uid="uid://bnnwws6ju1j70" path="res://UI scenes/start_screen/button_normal.gd" id="1_utd0u"]
 [ext_resource type="Script" uid="uid://yjcjumnn1ru4" path="res://UI scenes/start_screen/button_endless.gd" id="2_l3vv6"]
 [ext_resource type="Texture2D" uid="uid://bonhu71oc5g3l" path="res://UI scenes/start_screen/ICON_Credits Button.png" id="3_a8aw0"]
-[ext_resource type="AudioStream" uid="uid://dxr2s2bdjdnmg" path="res://UI scenes/start_screen/Rain for Us.mp3" id="3_l3vv6"]
 [ext_resource type="Texture2D" uid="uid://cvidqlqb1lof6" path="res://UI scenes/start_screen/ICON_Normal Button.png" id="4_kk50m"]
 [ext_resource type="Texture2D" uid="uid://bls1r5g1wvmxn" path="res://UI scenes/start_screen/ICON_Endless Button.png" id="6_2r8ws"]
 
 [node name="start_screen" type="Node2D"]
+script = ExtResource("1_kk50m")
 
 [node name="TitleMenuFinalVer(withTitle)" type="Sprite2D" parent="."]
 texture_filter = 2
@@ -16,10 +17,6 @@ texture_repeat = 1
 texture = ExtResource("1_ka8vc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_l3vv6")
-autoplay = true
 
 [node name="Button_credits" type="Button" parent="."]
 offset_left = 406.0

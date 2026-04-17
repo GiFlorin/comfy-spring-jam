@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://cbfrs7vb1kws5"]
+[gd_scene load_steps=43 format=4 uid="uid://cbfrs7vb1kws5"]
 
 [ext_resource type="PackedScene" uid="uid://bevla0ryewk0e" path="res://main-map/globals.tscn" id="1_c55ky"]
 [ext_resource type="PackedScene" uid="uid://dra62ti2oqht7" path="res://main-map/gui/gui.tscn" id="1_dy430"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b7u2ibw8adqeo" path="res://main-map/tile_map/TreeProp.png" id="9_4cc6n"]
 [ext_resource type="AudioStream" uid="uid://drwdihtmytp23" path="res://main-map/sound/Ready-Set-Go!.mp3" id="14_buq1c"]
 [ext_resource type="Script" uid="uid://kminigqajoo3" path="res://main-map/loopingscripts/toplooping.gd" id="14_ry4uq"]
+[ext_resource type="PackedScene" uid="uid://bn0w8cn13dfp1" path="res://Globals/music_manager.tscn" id="15_2f3qc"]
 [ext_resource type="Script" uid="uid://b28gnjtlnmefx" path="res://main-map/loopingscripts/bottomlooping.gd" id="15_ry4uq"]
 [ext_resource type="Script" uid="uid://6pi04yq57fp" path="res://main-map/loopingscripts/leftlooping.gd" id="16_c2e34"]
 [ext_resource type="Script" uid="uid://c5nxpdd4xr3yj" path="res://main-map/loopingscripts/rightlooping.gd" id="17_c2e34"]
@@ -627,7 +628,11 @@ position = Vector2(1, -54)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="level/main_character"]
 stream = ExtResource("14_buq1c")
+volume_db = -80.0
+pitch_scale = 0.01
 autoplay = true
+
+[node name="MusicManager" parent="level/main_character" instance=ExtResource("15_2f3qc")]
 
 [node name="npc" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1

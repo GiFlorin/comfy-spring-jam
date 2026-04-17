@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn0w8cn13dfp1"]
+
+[ext_resource type="Script" uid="uid://b410q4d60ld6i" path="res://Globals/music_manager.gd" id="1_caoax"]
+[ext_resource type="AudioStream" uid="uid://dxr2s2bdjdnmg" path="res://UI scenes/start_screen/Rain for Us.mp3" id="2_hwxqs"]
+[ext_resource type="AudioStream" uid="uid://drwdihtmytp23" path="res://main-map/sound/Ready-Set-Go!.mp3" id="3_hwxqs"]
+
+[node name="MusicManager" type="Node2D"]
+script = ExtResource("1_caoax")
+
+[node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hwxqs")
+parameters/looping = true
+
+[node name="MainMapMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hwxqs")
+parameters/looping = true

@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://dmj8stodkxja7" path="res://main-map/gui/label_score.gd" id="2_m6rwj"]
 [ext_resource type="FontFile" uid="uid://b6mrt7fddvo72" path="res://shared_assets/VCRosdNEUE.ttf" id="2_ydpms"]
 [ext_resource type="Script" uid="uid://b7iw8udf8fj8y" path="res://main-map/gui/pause_button.gd" id="5_l7ft5"]
-[ext_resource type="Script" uid="uid://t0f4vpk85gy7" path="res://main-map/gui/tutorial_button.gd" id="6_r3ugg"]
-[ext_resource type="PackedScene" uid="uid://c3q8xlygc4yo2" path="res://UI scenes/tutorial/tutorials.tscn" id="7_tgn4a"]
+[ext_resource type="Script" path="res://main-map/gui/tutorial_button.gd" id="6_r3ugg"]
+[ext_resource type="PackedScene" path="res://UI scenes/tutorial/tutorials.tscn" id="7_tgn4a"]
 
 [node name="GUI" type="CanvasLayer" node_paths=PackedStringArray("timer", "label_plus_seconds", "timer_plus_seconds")]
 layer = 2

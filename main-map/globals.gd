@@ -22,4 +22,4 @@ func set_data() -> void:
 		add_time = 5
 	elif game_mode == 'endless':
 		game_len = 60
-		add_time = 10
+		add_time = 3

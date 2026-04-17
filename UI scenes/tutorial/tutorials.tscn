@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3q8xlygc4yo2"]
+[gd_scene load_steps=7 format=3 uid="uid://cp37yheee23lr"]
 
 [ext_resource type="FontFile" uid="uid://b6mrt7fddvo72" path="res://shared_assets/VCRosdNEUE.ttf" id="1_j2jvs"]
 [ext_resource type="Script" uid="uid://diftk0hila5h3" path="res://UI scenes/tutorial/tutorials.gd" id="1_qaucm"]
 [ext_resource type="Texture2D" uid="uid://ginl85mxbuau" path="res://UI scenes/tutorial/keys.png" id="2_qaucm"]
 [ext_resource type="Texture2D" uid="uid://bht27p5v67p1y" path="res://main-map/egg_delivery/Eggs.png" id="3_q6p45"]
-[ext_resource type="Script" uid="uid://dv8nwiwxbi3cg" path="res://UI scenes/tutorial/pages.gd" id="3_uyd2x"]
+[ext_resource type="Script" path="res://UI scenes/tutorial/pages.gd" id="3_uyd2x"]
 [ext_resource type="Texture2D" uid="uid://bwuvmpbn1ojw7" path="res://main-map/tile_map/HouseProp.png" id="6_uyd2x"]
 
 [node name="tutorials" type="Control"]
@@ -297,6 +297,16 @@ texture = ExtResource("6_uyd2x")
 region_enabled = true
 region_rect = Rect2(1.3771744, 1.1655712, 189.38098, 212.35506)
 
+[node name="close_button" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 431.0
+offset_top = 502.0
+offset_right = 505.0
+offset_bottom = 533.0
+text = "CLOSE
+"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 259.0
@@ -308,19 +318,13 @@ alignment = 1
 [node name="previous_button" type="Button" parent="HBoxContainer"]
 process_mode = 3
 layout_mode = 2
-text = "previous"
-
-[node name="close_button" type="Button" parent="HBoxContainer"]
-process_mode = 3
-layout_mode = 2
-text = "close
-"
+text = "Previous"
 
 [node name="next_button" type="Button" parent="HBoxContainer"]
 process_mode = 3
 layout_mode = 2
-text = "next"
+text = "Next"
 
+[connection signal="button_down" from="close_button" to="." method="_on_close_button_button_down"]
 [connection signal="button_down" from="HBoxContainer/previous_button" to="." method="_on_previous_button_button_down"]
-[connection signal="button_down" from="HBoxContainer/close_button" to="." method="_on_close_button_button_down"]
 [connection signal="button_down" from="HBoxContainer/next_button" to="." method="_on_next_button_button_down"]

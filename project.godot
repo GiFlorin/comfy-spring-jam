@@ -21,6 +21,7 @@ Globals="*res://main-map/globals.gd"
 
 [display]
 
+window/size/sharp_corners=true
 window/stretch/mode="canvas_items"
 
 [editor]

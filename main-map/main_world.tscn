@@ -695,6 +695,7 @@ rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_wpcub")
 
 [node name="bottomleftlevelcopy" type="Node2D" parent="."]
+
 [node name="LM_RightLevel" type="Node2D" parent="."]
 visible = false
 position = Vector2(2688, 0)

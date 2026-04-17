@@ -1,9 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvqmqqk7752n8"]
+[gd_scene load_steps=9 format=3 uid="uid://dvqmqqk7752n8"]
 
+[ext_resource type="Texture2D" uid="uid://y6xvm83ebt8r" path="res://UI scenes/start_screen/Title Menu_FinalVer (with title).png" id="1_ka8vc"]
 [ext_resource type="Texture2D" uid="uid://dwrfevfw1qywd" path="res://UI scenes/SpringButtons.png" id="1_l3vv6"]
 [ext_resource type="Script" uid="uid://bnnwws6ju1j70" path="res://UI scenes/start_screen/button_normal.gd" id="1_utd0u"]
 [ext_resource type="Script" uid="uid://yjcjumnn1ru4" path="res://UI scenes/start_screen/button_endless.gd" id="2_l3vv6"]
 [ext_resource type="AudioStream" uid="uid://dxr2s2bdjdnmg" path="res://UI scenes/start_screen/Rain for Us.mp3" id="3_l3vv6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3vv6"]
+atlas = ExtResource("1_l3vv6")
+region = Rect2(800, 0, 100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyydu"]
 atlas = ExtResource("1_l3vv6")
@@ -13,53 +18,25 @@ region = Rect2(100, 0, 100, 50)
 atlas = ExtResource("1_l3vv6")
 region = Rect2(200, 0, 100, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l3vv6"]
-atlas = ExtResource("1_l3vv6")
-region = Rect2(800, 0, 100, 50)
-
 [node name="start_screen" type="Node2D"]
 
+[node name="TitleMenuFinalVer(withTitle)" type="Sprite2D" parent="."]
+texture_filter = 2
+texture_repeat = 1
+texture = ExtResource("1_ka8vc")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Label" type="Label" parent="."]
-offset_left = -104.0
-offset_top = -100.0
-offset_right = 115.0
-offset_bottom = -77.0
-text = "Welcome! click here to start:"
-
-[node name="Button_normal" type="Button" parent="."]
-offset_left = -110.0
-offset_top = -70.0
-offset_right = -2.0
-offset_bottom = -12.0
-scale = Vector2(2, 2)
-icon = SubResource("AtlasTexture_jyydu")
-flat = true
-script = ExtResource("1_utd0u")
-
-[node name="Button_endless" type="Button" parent="."]
-offset_left = -112.0
-offset_top = 51.0
-offset_bottom = 109.0
-scale = Vector2(2, 2)
-text = "
-
-"
-icon = SubResource("AtlasTexture_ka8vc")
-flat = true
-script = ExtResource("2_l3vv6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_l3vv6")
 autoplay = true
 
 [node name="Button_credits" type="Button" parent="."]
-offset_left = 337.0
-offset_top = 162.0
-offset_right = 445.0
-offset_bottom = 220.0
-scale = Vector2(2, 2)
+offset_left = 375.0
+offset_top = 199.0
+offset_right = 483.0
+offset_bottom = 257.0
+scale = Vector2(1.5, 1.5)
 icon = SubResource("AtlasTexture_l3vv6")
 flat = true
 
@@ -70,5 +47,27 @@ offset_right = 527.0
 offset_bottom = 302.0
 text = "v. 0.1"
 
-[connection signal="button_down" from="Button_normal" to="Button_normal" method="_on_button_down"]
-[connection signal="button_down" from="Button_endless" to="Button_endless" method="_on_button_down"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -360.0
+offset_top = -27.0
+offset_right = -248.0
+offset_bottom = 93.0
+scale = Vector2(2, 2)
+
+[node name="Button_normal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = SubResource("AtlasTexture_jyydu")
+flat = true
+script = ExtResource("1_utd0u")
+
+[node name="Button_endless" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "
+
+"
+icon = SubResource("AtlasTexture_ka8vc")
+flat = true
+script = ExtResource("2_l3vv6")
+
+[connection signal="button_down" from="VBoxContainer/Button_normal" to="VBoxContainer/Button_normal" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/Button_endless" to="VBoxContainer/Button_endless" method="_on_button_down"]

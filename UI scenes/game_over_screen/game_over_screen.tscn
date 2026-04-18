@@ -1,16 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjb4veqmmd4ok"]
+[gd_scene load_steps=8 format=3 uid="uid://bjb4veqmmd4ok"]
 
 [ext_resource type="Script" uid="uid://dmik1sokqnj82" path="res://UI scenes/game_over_screen/game_over_screen.gd" id="1_bujvx"]
 [ext_resource type="AudioStream" uid="uid://ji6rq27k3c5r" path="res://shared_assets/Spring.mp3" id="1_oald6"]
 [ext_resource type="PackedScene" uid="uid://ur3am6pn8b02" path="res://shared_assets/restart_button.tscn" id="2_f4kuq"]
+[ext_resource type="Texture2D" uid="uid://db5687s5aknti" path="res://UI scenes/game_over_screen/GameOverScreen.png" id="2_nkic7"]
 [ext_resource type="PackedScene" uid="uid://b7rsq13gwc335" path="res://shared_assets/button_main_screen.tscn" id="3_oald6"]
+[ext_resource type="Texture2D" uid="uid://dmsqhirir342r" path="res://UI scenes/win_screen/ICON_Restart Button.png" id="5_vdqvm"]
+[ext_resource type="Texture2D" uid="uid://cwxvr55gy0u6t" path="res://UI scenes/win_screen/ICON_Return Button.png" id="7_wpuky"]
 
 [node name="game_over_screen" type="Node2D"]
 script = ExtResource("1_bujvx")
 
+[node name="GameOverScreen" type="Sprite2D" parent="."]
+texture_filter = 2
+texture_repeat = 1
+texture = ExtResource("2_nkic7")
+
 [node name="Camera" type="Camera2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -136.0
 offset_top = -74.0
 offset_right = 176.0
@@ -22,13 +31,19 @@ stream = ExtResource("1_oald6")
 autoplay = true
 
 [node name="restart_button" parent="." instance=ExtResource("2_f4kuq")]
-offset_left = -108.0
-offset_top = -47.0
-offset_right = 0.0
-offset_bottom = 11.0
+offset_left = -190.0
+offset_top = 125.0
+offset_right = -42.0
+offset_bottom = 228.0
+scale = Vector2(1, 1)
+icon = ExtResource("5_vdqvm")
 
 [node name="Button_main_screen" parent="." instance=ExtResource("3_oald6")]
-offset_top = 81.0
-offset_bottom = 139.0
+offset_left = 40.0
+offset_top = 125.0
+offset_right = 188.0
+offset_bottom = 228.0
+scale = Vector2(1, 1)
+icon = ExtResource("7_wpuky")
 
 [connection signal="button_down" from="Button_main_screen" to="Button_main_screen" method="_on_button_down"]

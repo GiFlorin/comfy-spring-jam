@@ -1,49 +1,70 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkmwrqpr6m3ev"]
+[gd_scene load_steps=8 format=3 uid="uid://dkmwrqpr6m3ev"]
 
 [ext_resource type="Script" uid="uid://87o2q0tx0gnt" path="res://UI scenes/end_day_scene/end_day_scene.gd" id="1_b771c"]
+[ext_resource type="Texture2D" uid="uid://wroiq4bl37j8" path="res://UI scenes/end_day_scene/End_of_Day_Screen.png" id="2_16sja"]
 [ext_resource type="PackedScene" uid="uid://ur3am6pn8b02" path="res://shared_assets/restart_button.tscn" id="2_b771c"]
 [ext_resource type="AudioStream" uid="uid://ji6rq27k3c5r" path="res://shared_assets/Spring.mp3" id="3_nerjy"]
 [ext_resource type="PackedScene" uid="uid://b7rsq13gwc335" path="res://shared_assets/button_main_screen.tscn" id="4_nerjy"]
+[ext_resource type="Texture2D" uid="uid://dmsqhirir342r" path="res://UI scenes/win_screen/ICON_Restart Button.png" id="5_8plgv"]
+[ext_resource type="Texture2D" uid="uid://cwxvr55gy0u6t" path="res://UI scenes/win_screen/ICON_Return Button.png" id="7_fjwqt"]
 
 [node name="end_day_scene" type="Node2D"]
 script = ExtResource("1_b771c")
+
+[node name="EndOfDayScreen" type="Sprite2D" parent="."]
+texture_filter = 2
+texture_repeat = 1
+texture = ExtResource("2_16sja")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
 offset_left = -93.0
-offset_top = -215.0
+offset_top = -163.0
 offset_right = 96.0
-offset_bottom = -192.0
+offset_bottom = -140.0
 text = "{name}'s day has ended!"
 
-[node name="restart_button" parent="." instance=ExtResource("2_b771c")]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 52)
 stream = ExtResource("3_nerjy")
 autoplay = true
 
 [node name="Label_score" type="Label" parent="."]
 offset_left = -67.0
-offset_top = -184.0
+offset_top = -132.0
 offset_right = 68.0
-offset_bottom = -161.0
+offset_bottom = -109.0
 text = "Your score was: 0"
 
 [node name="Label_hscore" type="Label" parent="."]
 offset_left = -85.0
-offset_top = -149.0
+offset_top = -97.0
 offset_right = 90.0
-offset_bottom = -126.0
+offset_bottom = -74.0
 text = "Your High Score is: xxx"
 
 [node name="Label_new_high_score" type="Label" parent="."]
 offset_left = -63.0
-offset_top = -111.0
+offset_top = -59.0
 offset_right = 65.0
-offset_bottom = -88.0
+offset_bottom = -36.0
 text = "New high score!!"
 
+[node name="restart_button" parent="." instance=ExtResource("2_b771c")]
+offset_left = -190.0
+offset_top = 125.0
+offset_right = -42.0
+offset_bottom = 228.0
+scale = Vector2(1, 1)
+icon = ExtResource("5_8plgv")
+
 [node name="Button_main_screen" parent="." instance=ExtResource("4_nerjy")]
-offset_top = 64.0
-offset_bottom = 122.0
+offset_left = 40.0
+offset_top = 125.0
+offset_right = 188.0
+offset_bottom = 228.0
+scale = Vector2(1, 1)
+icon = ExtResource("7_fjwqt")
+
+[connection signal="button_down" from="Button_main_screen" to="Button_main_screen" method="_on_button_down"]

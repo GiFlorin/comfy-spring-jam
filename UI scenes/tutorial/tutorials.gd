@@ -41,4 +41,3 @@ func _on_close_button_button_down() -> void:
 	get_tree().paused = false
 	self.visible = false
 	Globals.tutorial_done = true
-	MusicManager.main_map_music.play()

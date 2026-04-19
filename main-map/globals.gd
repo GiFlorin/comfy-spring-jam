@@ -13,13 +13,13 @@ var is_paused = false
 var tutorial_done = false
 
 # normal, endless
-var game_mode: String = 'normal'
+var game_mode: String = "normal"
 
 func set_data() -> void:
-	if game_mode == 'normal':
+	if game_mode == "normal":
 		game_len = 90
 		deliver_goal = 12
 		add_time = 5
-	elif game_mode == 'endless':
+	elif game_mode == "endless":
 		game_len = 60
 		add_time = 3

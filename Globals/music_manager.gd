@@ -16,19 +16,7 @@ func play_main_menu_music() -> void:
 	main_menu_music.play()
 	pass
 
-func play_main_map_music() -> void:
-	main_map_music.play()
-	pass
-
-func deafen_music() -> void:
-	main_menu_music.volume_db = -5
-	pass
-
-func undeafen_music() -> void:
-	main_menu_music.volume_db = 0
-	pass
-
 func stop_all_music() -> void:
 	main_menu_music.stop()
-	main_map_music.stop()
+	#main_map_music.stop()
 	pass

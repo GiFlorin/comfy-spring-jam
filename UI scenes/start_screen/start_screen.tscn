@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvqmqqk7752n8"]
+[gd_scene load_steps=9 format=3 uid="uid://dvqmqqk7752n8"]
 
 [ext_resource type="Texture2D" uid="uid://y6xvm83ebt8r" path="res://UI scenes/start_screen/Title Menu_FinalVer (with title).png" id="1_ka8vc"]
 [ext_resource type="Script" uid="uid://efie728c03sj" path="res://UI scenes/start_screen/start_screen.gd" id="1_kk50m"]
 [ext_resource type="Script" uid="uid://bnnwws6ju1j70" path="res://UI scenes/start_screen/button_normal.gd" id="1_utd0u"]
 [ext_resource type="Script" uid="uid://yjcjumnn1ru4" path="res://UI scenes/start_screen/button_endless.gd" id="2_l3vv6"]
 [ext_resource type="Texture2D" uid="uid://bonhu71oc5g3l" path="res://UI scenes/start_screen/ICON_Credits Button.png" id="3_a8aw0"]
+[ext_resource type="Script" uid="uid://cwkjrcuswk61o" path="res://UI scenes/start_screen/button_credits.gd" id="4_2r8ws"]
 [ext_resource type="Texture2D" uid="uid://cvidqlqb1lof6" path="res://UI scenes/start_screen/ICON_Normal Button.png" id="4_kk50m"]
 [ext_resource type="Texture2D" uid="uid://bls1r5g1wvmxn" path="res://UI scenes/start_screen/ICON_Endless Button.png" id="6_2r8ws"]
 
@@ -25,6 +26,18 @@ offset_right = 554.0
 offset_bottom = 283.0
 icon = ExtResource("3_a8aw0")
 flat = true
+script = ExtResource("4_2r8ws")
+
+[node name="Credits_List" type="Label" parent="."]
+offset_left = 229.0
+offset_top = 59.0
+offset_right = 543.0
+offset_bottom = 160.0
+text = "Programmer: giflorin
+Pixel Artist & Programmer: Ghastly4Eva
+Concept Artist & Illustrator: tricksterteas
+Music Composer: Slxshofficial"
+horizontal_alignment = 2
 
 [node name="Label_version" type="Label" parent="."]
 offset_left = 487.0
@@ -56,5 +69,6 @@ icon = ExtResource("6_2r8ws")
 flat = true
 script = ExtResource("2_l3vv6")
 
+[connection signal="button_down" from="Button_credits" to="Button_credits" method="_on_button_down"]
 [connection signal="button_down" from="Button_normal" to="Button_normal" method="_on_button_down"]
 [connection signal="button_down" from="Button_endless" to="Button_endless" method="_on_button_down"]

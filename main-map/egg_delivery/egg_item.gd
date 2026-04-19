@@ -28,7 +28,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	glow.energy = max_glow/get_distance()
+	
+	if get_distance() <= 0:
+		glow.energy = 0
+		return
+	
+	var distance = max(get_distance(), 50.0)
+	
+	glow.energy = clamp(max_glow/distance, 0, 10)
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed('interaction'):

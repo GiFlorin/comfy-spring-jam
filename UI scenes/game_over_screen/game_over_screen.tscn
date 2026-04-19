@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjb4veqmmd4ok"]
+[gd_scene load_steps=10 format=3 uid="uid://bjb4veqmmd4ok"]
 
 [ext_resource type="Script" uid="uid://dmik1sokqnj82" path="res://UI scenes/game_over_screen/game_over_screen.gd" id="1_bujvx"]
 [ext_resource type="AudioStream" uid="uid://ji6rq27k3c5r" path="res://shared_assets/Spring.mp3" id="1_oald6"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b7rsq13gwc335" path="res://shared_assets/button_main_screen.tscn" id="3_oald6"]
 [ext_resource type="Texture2D" uid="uid://dmsqhirir342r" path="res://UI scenes/win_screen/ICON_Restart Button.png" id="5_vdqvm"]
 [ext_resource type="Texture2D" uid="uid://cwxvr55gy0u6t" path="res://UI scenes/win_screen/ICON_Return Button.png" id="7_wpuky"]
+[ext_resource type="AudioStream" uid="uid://c8op37f61c3sr" path="res://shared_assets/Select.wav" id="8_wpuky"]
+[ext_resource type="AudioStream" uid="uid://cfd61uox7kqv3" path="res://shared_assets/Selecting-.wav" id="9_03vpd"]
 
 [node name="game_over_screen" type="Node2D"]
 script = ExtResource("1_bujvx")
@@ -45,5 +47,13 @@ offset_right = 188.0
 offset_bottom = 228.0
 scale = Vector2(1, 1)
 icon = ExtResource("7_wpuky")
+
+[node name="SelectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_wpuky")
+volume_db = -10.0
+
+[node name="SelectingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_03vpd")
+volume_db = -10.0
 
 [connection signal="button_down" from="Button_main_screen" to="Button_main_screen" method="_on_button_down"]

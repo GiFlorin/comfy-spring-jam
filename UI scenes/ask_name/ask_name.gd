@@ -1,4 +1,5 @@
 extends Node2D
+@onready var select_sound: AudioStreamPlayer2D = $SelectSound
 
 @onready var text_edit: TextEdit = $TextEdit
 @onready var button: Button = $Button

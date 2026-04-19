@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvqmqqk7752n8"]
+[gd_scene load_steps=11 format=3 uid="uid://dvqmqqk7752n8"]
 
 [ext_resource type="Texture2D" uid="uid://y6xvm83ebt8r" path="res://UI scenes/start_screen/Title Menu_FinalVer (with title).png" id="1_ka8vc"]
 [ext_resource type="Script" uid="uid://efie728c03sj" path="res://UI scenes/start_screen/start_screen.gd" id="1_kk50m"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://cwkjrcuswk61o" path="res://UI scenes/start_screen/button_credits.gd" id="4_2r8ws"]
 [ext_resource type="Texture2D" uid="uid://cvidqlqb1lof6" path="res://UI scenes/start_screen/ICON_Normal Button.png" id="4_kk50m"]
 [ext_resource type="Texture2D" uid="uid://bls1r5g1wvmxn" path="res://UI scenes/start_screen/ICON_Endless Button.png" id="6_2r8ws"]
+[ext_resource type="AudioStream" uid="uid://c8op37f61c3sr" path="res://shared_assets/Select.wav" id="9_2r8ws"]
+[ext_resource type="AudioStream" uid="uid://cfd61uox7kqv3" path="res://shared_assets/Selecting-.wav" id="10_y5pul"]
 
 [node name="start_screen" type="Node2D"]
 script = ExtResource("1_kk50m")
@@ -68,6 +70,13 @@ text = "
 icon = ExtResource("6_2r8ws")
 flat = true
 script = ExtResource("2_l3vv6")
+
+[node name="SelectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_2r8ws")
+volume_db = -10.0
+
+[node name="SelectingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_y5pul")
 
 [connection signal="button_down" from="Button_credits" to="Button_credits" method="_on_button_down"]
 [connection signal="button_down" from="Button_normal" to="Button_normal" method="_on_button_down"]

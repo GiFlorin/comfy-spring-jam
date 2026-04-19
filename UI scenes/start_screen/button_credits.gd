@@ -1,5 +1,6 @@
 extends Button
 @onready var credits_list: Label = $"../Credits_List"
+@onready var select_sound: AudioStreamPlayer2D = $"../SelectSound"
 
 var credit_visibility: bool = false
 
@@ -15,6 +16,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_button_down() -> void:
+	select_sound.play()
 	if credit_visibility == true:
 		credits_list.visible = false
 		credit_visibility = false

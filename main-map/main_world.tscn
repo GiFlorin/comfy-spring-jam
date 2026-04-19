@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://cbfrs7vb1kws5"]
+[gd_scene load_steps=44 format=4 uid="uid://cbfrs7vb1kws5"]
 
 [ext_resource type="PackedScene" uid="uid://bevla0ryewk0e" path="res://main-map/globals.tscn" id="1_c55ky"]
 [ext_resource type="PackedScene" uid="uid://dra62ti2oqht7" path="res://main-map/gui/gui.tscn" id="1_dy430"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://b28gnjtlnmefx" path="res://main-map/loopingscripts/bottomlooping.gd" id="15_ry4uq"]
 [ext_resource type="Script" uid="uid://6pi04yq57fp" path="res://main-map/loopingscripts/leftlooping.gd" id="16_c2e34"]
 [ext_resource type="Script" uid="uid://c5nxpdd4xr3yj" path="res://main-map/loopingscripts/rightlooping.gd" id="17_c2e34"]
+[ext_resource type="PackedScene" uid="uid://cn838x3at0qyj" path="res://npcs/base_npc/cat_npc_base.tscn" id="22_4cc6n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpcub"]
 texture = ExtResource("2_ry4uq")
@@ -636,19 +637,7 @@ autoplay = true
 
 [node name="npc" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1
-position = Vector2(675, 285)
-
-[node name="npc_base" parent="level" instance=ExtResource("7_c55ky")]
-z_index = 1
-position = Vector2(-292, -76)
-
-[node name="npc_base2" parent="level" instance=ExtResource("7_c55ky")]
-z_index = 1
-position = Vector2(1422, 909)
-
-[node name="npc_base3" parent="level" instance=ExtResource("7_c55ky")]
-z_index = 1
-position = Vector2(553, 894)
+position = Vector2(583, 926)
 
 [node name="npc_base4" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1
@@ -656,7 +645,7 @@ position = Vector2(1446, -104)
 
 [node name="npc_base5" parent="level" instance=ExtResource("7_c55ky")]
 z_index = 1
-position = Vector2(428, -57)
+position = Vector2(403, -48)
 
 [node name="npc_barriers" type="Node2D" parent="level"]
 
@@ -780,5 +769,14 @@ scale = Vector2(1.6298574, 1)
 shape = SubResource("RectangleShape2D_8gcep")
 
 [node name="GUI" parent="." instance=ExtResource("1_dy430")]
+
+[node name="cat_npc_base" parent="." instance=ExtResource("22_4cc6n")]
+position = Vector2(-258, -75)
+
+[node name="cat_npc_base2" parent="." instance=ExtResource("22_4cc6n")]
+position = Vector2(603, 278)
+
+[node name="cat_npc_base3" parent="." instance=ExtResource("22_4cc6n")]
+position = Vector2(1461, 916)
 
 [connection signal="new_destination" from="level/main_character/egg_item" to="level/delivery_points" method="_on_egg_item_new_destination"]
